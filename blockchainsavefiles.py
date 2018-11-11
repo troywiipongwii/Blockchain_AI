@@ -22,20 +22,22 @@ def load_data():
         file_content = f.readlines()
         global blockchain
         global open_transactions
-        blockchain = file_content[0]
-        open_transactions = file_content[1]
+        blockchain = json.loads(file_content[0][:-1])  #:-1 ignores the \n string
+        open_transactions = json.loads(file_content[1])
         #list of strings, so cause an error
         # we need to be able to convert a list to a string and a string back to complex data
-
+        # also need to load ordered dicts if using ordered dicts
+        #blockchain = [{ only thing that changes is transactions:[tx for tx in block['transactions']]} for block in blockchain]
+        # go back to converting strings into python objects
 load_data()        
 
 
 def save_data():
     # can use string to convert list to string
     with open('blockchain.txt', mode='w') as f:
-        f.write(blockchain)
+        f.write(json.dumps(blockchain))
         f.write('\n')
-        f.write(open_transactions)
+        f.write(json.dumps(open_transactions))
 
 def valid_proof(transactions, last_hash, proof):
     guess = (str(transactions) + str(last_hash) + str(proof)).encode()
@@ -115,7 +117,6 @@ def mine_block():
              'proof': proof
              }
     blockchain.append(block)
-    save_data()
     return True
 
 def get_transaction_value():
@@ -167,6 +168,9 @@ while waiting_for_input:
     elif user_choice =='3':
         if mine_block():
             open_transactions = []
+            save_data()
+            # should call save_data here so open transactions isn't printed
+            # remove it from above
     elif user_choice =='4':
         if len(blockchain) >= 1:
             blockchain[0] = 2
