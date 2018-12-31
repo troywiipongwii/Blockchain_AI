@@ -1,3 +1,5 @@
+import FICOscore
+
 class CreditReport():
     """A individuals credit report.
     
@@ -29,5 +31,5 @@ class CreditReport():
         self.income_changes = income_changes
         
     
-    def credit_rating():
-        pass
+    def credit_rating(self):
+        creditRating = FICOscore.main()
