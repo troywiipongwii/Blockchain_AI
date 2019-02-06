@@ -1,0 +1,79 @@
+<div class="unsigned-login-wrapper">
+    <div class="login-content updated-value-block">
+        <div class="login-header">
+            <img src="assets/images/light-home-logo.png" class="logo-icon" id="dark-header-logo" alt="The Digital Reserve">
+            <img src="assets/images/light-close-icon.png" class="float-right" id="dark-close-icon" alt="close">
+        </div>
+        <div class="login-text">
+            <h4>
+                Login to access your account!
+            </h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+            </p>
+        </div>
+        <form>
+            <div class="form-group">
+                <input type="password" class="form-control" id="loginEmail" required>
+                <label for="loginEmail">Enter your Private Key…</label>
+            </div>
+            
+            <div class="file-btn-wrap">
+                <input type="file" class="btn btn-primary d-none " value="" id="loginSubmit">
+                <label for="loginSubmit" class="file-btn" > Or Select a Wallet File…</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="unsigned-forgotpwd-wrapper">
+    <div class="forgotpwd-content">
+        <div class="forgotpwd-header">
+            <img src="assets/images/light-home-logo.png" class="logo-icon darkpwd-header-logo" alt="The Digital Reserve">
+            <img src="assets/images/light-close-icon.png" class="float-right darkpwd-close-icon" alt="close">
+        </div>
+        <div class="forgotpwd-text">
+            <h4>
+                Forgot Password?
+            </h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+            </p>
+        </div>
+        <form>
+            <div class="form-group">
+                <input type="email" class="form-control" id="forgotpwdEmail" required>
+                <label for="forgotpwdEmail">Email ID</label>
+            </div>
+            <button type="submit" class="btn btn-primary d-block">Reset Password</button>
+        </form>
+    </div>
+</div>
+<div class="join-signup-wrapper">
+    <div class="signup-content updated-value-block">
+        <div class="signup-header ">
+            <img src="assets/images/light-home-logo.png" class="logo-icon darksignup-header-logo" alt="The Digital Reserve">
+            <img src="assets/images/light-close-icon.png" class="float-right darksignup-close-icon" alt="close">
+        </div>
+        <div class="signup-text">
+            <h4>
+                Create new wallet to get started!
+            </h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+            </p>
+        </div>
+        <form>
+            <div class="form-group">
+                <input type="password" class="form-control" id="signupPwd" required>
+                <label for="signupPwd">Enter Password</label>
+            </div>
+            <div class="form-group">
+                <a href="javascript:void(0);" id="signIn" class="d-block sign-in">Existing user? Sign In!</a>
+            </div>
+            <button type="submit" class="btn btn-primary d-block" data-target="#keystore-denarii-modal" data-toggle="modal" >Create new Wallet</button>
+        </form>
+    </div>
+</div>
+<div class="backdrop"></div>
+<script src="unsigned_header_component/login_component/login.js"></script>
+<script src="unsigned_header_component/login_component/enter_passkey_component/enter_passkey.js"></script>

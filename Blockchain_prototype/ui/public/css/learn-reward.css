@@ -1,0 +1,14 @@
+.dashboard-component-main-wrapper.learn-reward-component-main-wrapper{
+    margin-bottom: 0;
+}
+ul.learn-rewards-item-wrapper {
+    padding: 0 10px 30px;
+}
+li.learn-rewards-item {
+    padding: 0 10px 30px;
+    width: 25%;
+}
+img.learn-rewards-sticker {
+    max-width: 100%;
+    margin-bottom: 13px;
+}

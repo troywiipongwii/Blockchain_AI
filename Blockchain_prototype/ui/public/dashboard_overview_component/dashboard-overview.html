@@ -1,0 +1,28 @@
+<div class="dashboard-component-main-wrapper dashboard-overview-main-wrapper d-lg-flex flex-column">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link dashboard-detail-heading active" id="your-overview-tab" data-toggle="tab" href="#your-overview" role="tab" aria-controls="your-overview" aria-selected="true">Your Overview</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link dashboard-detail-heading" id="network-overview-tab" data-toggle="tab" href="#network-overview" role="tab" aria-controls="network-overview" aria-selected="true">Network Overview</a>
+        </li>
+        <li class="nav-item filter-item">
+            <select class="dashboard-detail-heading">
+                <option class="dashboard-detail-heading" selected disabled hidden>Filter By</option>
+                <option class="dashboard-detail-heading">Last 3 months</option>
+                <option class="dashboard-detail-heading">Last 6 months</option>
+                <option class="dashboard-detail-heading">Last 1 year</option>
+            </select>
+        </li>
+    </ul>
+    <div class="tab-content" id="overview-content">
+        <div class="tab-pane fade show active" id="your-overview" role="tabpanel" aria-labelledby="your-overview-tab">
+            <div id="your-overview-chart-container"></div>
+            <span class="hide-canvas-text"></span>
+        </div>
+        <div class="tab-pane fade" id="network-overview" role="tabpanel" aria-labelledby="network-tab">
+            <div id="network-chart-container"></div>
+            <span class="hide-canvas-text"></span>
+        </div>
+    </div>
+</div>

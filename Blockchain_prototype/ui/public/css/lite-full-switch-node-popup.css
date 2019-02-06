@@ -1,0 +1,158 @@
+.lite-full-switch-node-popop-innerlay{
+    padding: 54px 20px 21px;
+    min-height: calc(100vh - 40px);
+    border-radius: 6px;
+    margin: 20px;
+    box-shadow: 0 0 19px 0 rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+}
+.modal-header.lite-full-switch-header-wrapper {
+    padding: 0;
+    border: none;
+    margin-bottom: 14px;
+}
+.lite-full-node-popup-header-wrapper h1, .lite-full-content-block, .lite-node-popup-content,.lite-node-instruction-content,
+.lite-node-popup-head{
+    font-family: AvertaRegular;
+}
+.lite-full-node-popup-header-wrapper h1{
+    font-size: 28px;
+    color: #0c152e;
+}
+.modal-header.lite-full-switch-header-wrapper button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.lite-node-popup-close{
+    width: 14px;
+    height: auto;
+}
+.lite-full-content-block, .lite-node-popup-content,.lite-node-instruction-content{
+    opacity: 0.5;
+    font-size: 10px;
+    line-height: 1.8;
+    color: #010101;
+}
+.lite-info-wrapper{
+    border-radius: 4px;
+    background-color: #eeeeee;
+    border: solid 1px #3f9dfe;
+    padding: 41px 20px 20px;
+    transition: 0.6s;
+}
+.lite-node-popup-head{
+    font-size: 20px;
+    color: #3f9dfe;
+    margin-bottom: 8px;
+    font-family: AvertaUltraBold;
+}
+.full-node-popup-content{
+    margin-bottom: 9px;
+}
+.lite-node-instructions-wrap{
+    padding-left: 17PX;
+}
+.lite-node-instruction-block .checkList-icon,.hover-checkList-icon {
+    width: 18px;
+    height: auto;
+}
+.hover-checkList-icon{
+    display: none;
+}
+.lite-node-instruction-content, .lite-node-popup-btn{
+    font-family: AvertaBold;
+}
+.lite-node-instruction-content{
+    margin-left: 18px;
+    opacity: unset;
+}
+.lite-node-instruction-block{
+    margin-bottom: 20px;
+}
+.lite-node-popup-btn{
+    padding: 17px 0;
+    margin-top: auto;
+    border: none;
+    cursor: pointer;
+    background-color: #3f9dfe;
+    font-size: 15px;
+    line-height: 1.47;
+    color: #fff;
+    border-radius: 3px; 
+}
+.lite-full-content-block{
+    margin-bottom: 56px;
+}
+.lite-info-wrapper:hover .lite-node-popup-head {
+    font-family: AvertaUltraBold;
+}
+@media screen and (min-width: 1024px){
+    .lite-full-switch-node-popop-innerlay{
+        padding: 74px 60px;
+        min-height: auto;
+        margin: 0;
+    }
+    .modal-dialog.modal-dialog-centered.lite-full-switch-node-popup-overlay{
+        max-width: 908px;
+        display: flex !important;
+    }
+    .modal-header.lite-full-switch-header-wrapper {
+        margin-bottom: 17px;
+    }
+    .lite-full-content-block{
+        margin: 0 0 36px 0;
+        width: 55%;
+    }
+    .lite-info-wrapper{
+        padding: 41px 19px 21px;
+        width: 49%;
+    }
+    .lite-node-popup-content{
+        margin-bottom: 27px;
+    }
+    .lite-node-instructions-wrap{
+        margin-bottom: 15px;
+    }
+    .lite-info-wrapper:hover .hover-checkList-icon{ 
+        display: block;
+    }
+    .lite-info-wrapper:hover .checkList-icon{
+        display: none;
+    }
+    .lite-info-wrapper:hover {
+        background-color:#3f9dfe;
+        opacity: 1;
+    }
+    .lite-info-wrapper:hover .lite-node-popup-head,.lite-info-wrapper:hover .lite-node-popup-content,.lite-info-wrapper:hover 
+    .lite-node-instruction-content,.lite-info-wrapper:hover .lite-node-popup-btn{
+        color: #fff;
+    }
+    .lite-info-wrapper:hover .lite-node-popup-btn{
+        color: #3f9dfe;
+        background-color: #fff;
+    }
+    .modal-open .modal.lite-full-node-block.show{
+        background-color: rgba(10, 18, 42, 0.9);
+    }
+}
+@media screen and (max-width: 992px){
+    .lite-info-wrapper{
+        margin-bottom: 10px
+    }
+    .lite-node-instructions-wrap{
+        margin-bottom: 33px;
+    }
+     .lite-full-switch-node-popup-overlay{
+        margin: 0;
+        max-width: 100%;
+    }
+    .modal-open .modal.lite-full-node-block{
+        background-color: #0c142e;
+    }
+}
+@media screen and (min-width: 1440px){
+    .switch-node-popup, .lite-full-node-block{
+        max-height: 100vh;
+    }
+}

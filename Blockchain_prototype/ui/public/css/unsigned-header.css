@@ -1,0 +1,164 @@
+.navbar-toggler-icon.toggle-icon {
+    background: url('../assets/images/unsigned-hamburger-menu.png') no-repeat;
+    width: 14px;
+    height: 14px;
+    background-size: 14px 14px;
+}
+.navbar.navbar-expand-lg.justify-content-between.header-wrapper{
+    padding: 35px 30px;
+}
+.header-wrapper .menu-list-items .close-icon  {
+    width: calc(34px - 6px);
+    height: auto;
+    padding: 7px;
+}
+.navbar-toggler:not(:disabled):not(.disabled){
+    border: none;
+    outline: none;
+}
+.logo-icon, .d-flex.justify-content-between.align-items-center.mobile-logo-wrapper .light-header-logo, .mobile-light-header-logo{
+    width: 218px;
+    height: auto;
+}
+.nav-item .nav-link.list-link, .navbar-nav .nav-link.list-link:focus, 
+.navbar-nav .nav-link.list-link:hover{
+    font-family: AvertaBold;
+    color: #fff;
+    padding: 0 43px;
+    
+}
+.navbar-brand.header-text-wrap, .navbar-toggler{
+    margin: 0;
+    padding: 0;
+}
+.navbar-collapse.justify-content-end.collapse .navbar-nav.nav-items-wrap{
+    margin-top: 20px;
+}
+.btn.login-btn, .btn.revolution-btn, .menu-header{
+    color: #fff;
+    font-family: AvertaExtraBold;
+}
+.menu-header{
+    font-size: 20px;
+    margin-left: 11px;
+}
+.btn.login-btn{
+    padding: 13px 64.5px;
+    margin-bottom: 9px;
+    border-radius: 3px;
+}
+.btn.revolution-btn{
+    padding: 13px 25px;
+}
+.btn-wrapper, .nav-item .nav-link.list-link, .navbar-nav .nav-link.list-link:focus, 
+.navbar-nav .nav-link.list-link:hover{
+    padding: 0 43px;
+    line-height: 2;
+    margin: 0;
+}
+.nav-item .nav-link.list-link, .navbar-nav .nav-link.list-link:focus, 
+.navbar-nav .nav-link.list-link:hover, .btn.revolution-btn, .btn.login-btn{
+    font-size: 30px;
+}
+.menu-list-items, .menu-header, .mobile-light-header-logo, .menu-list-items .close-icon{
+    display: none;
+}
+.header-wrapper .collapse-wrapper{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 150%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #3f9dfe;
+    transition: bottom 0.5s;
+    display: block;
+}
+
+.mobile-logo-wrapper{
+    padding: 40px 30px;
+}
+.mobile-light-header-logo{
+    width: 30px;
+    height: auto;
+}
+@media screen and (min-width: 1024px){
+    .navbar.navbar-expand-lg.justify-content-between.header-wrapper{
+        padding:35px 77px;
+    }
+    .btn-wrapper{
+        margin-left: 21px;
+        margin-bottom: 0;
+        padding: 0;
+    }
+    .btn.login-btn{
+        margin:0 9px 0 0;
+    }
+    .navbar-collapse.justify-content-end.collapse .navbar-nav.nav-items-wrap{
+        margin: 0;
+    }
+    .btn.login-btn, .btn.revolution-btn{
+        background-color: #060606;
+        color: #50a6ff;
+        font-size: 12px;
+    }
+    .nav-item .nav-link.list-link, .navbar-nav .nav-link.list-link:focus, 
+    .navbar-nav .nav-link.list-link:hover{
+        font-size: 12px;
+        line-height: 1.83;
+        padding: 13px 15px;
+    }
+    .header-wrapper .collapse-wrapper{
+        position: static;
+        background: transparent
+    }
+}
+@media screen and (max-width: 992px){
+    .btn.login-btn, .btn.revolution-btn{
+        background: transparent;
+        padding: 0;
+        font-family: AvertaBold;
+    }
+    .btn.login-btn{
+        margin-bottom: 13px;
+    }
+    .menu-list-items .close-icon, .btn.login-btn{
+        display: block;
+    }
+    .menu-header, .mobile-light-header-logo{
+        display: flex;
+    }
+    .header-wrapper .menu-list-items{
+        padding: 40px 30px 0;
+    }
+    .header-wrapper .navbar-nav.nav-items-wrap {
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .collapse {
+        z-index: 1;
+    }
+    .header-wrapper.show-menu .collapse-wrapper{
+        bottom: 0;
+        top: 0;
+    }
+    .mobile-menubar-overlay{	
+        flex: 1;	
+    }
+    .inner-list-menu{
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+@media screen and (min-width: 1024px) and (max-height: 768px){
+    .nav-item .nav-link.list-link, .navbar-nav .nav-link.list-link:focus, .navbar-nav .nav-link.list-link:hover{
+        padding: 13px 8px;
+    }
+    .btn-wrapper{
+        margin-left: 10px;
+    }
+    .btn.login-btn {
+        padding: 13px 48.5px;
+    }
+}

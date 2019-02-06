@@ -1,0 +1,57 @@
+<header id="signed-main-header">
+        <nav class="navbar navbar-expand-lg justify-content-between signed-header-wrapper">
+            <a class="navbar-brand signed-header-text-wrap" href="#">
+                <img src="assets/images/light-home-logo.png" class="d-block signed-logo-icon" id="dark-header-logo" alt="The Digital Reserve">
+            </a>
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon signed-toggle-icon"></span>
+            </button>
+            <div class="navbar-collapse justify-content-center align-items-center signed-collapse-wrapper" id="signed-menu-bar">
+                <div class="signed-menu-list-items d-flex d-lg-none justify-content-between align-items-center">
+                    <div class="d-flex flex-sm-row align-items-center">
+                        <img src="assets/images/collapsable-menu-icon.png" class="signed-mobile-light-header-logo">
+                        <span class="signed-menu-header">The Digital Reserve</span> 
+                    </div>
+                    <img src="assets/images/dark-close-icon.png" class="menu-close-icon">
+                </div>
+                <ul class="navbar-nav signed-nav-items-wrap d-flex align-items-start align-items-lg-center">
+                    <li class="nav-item ">
+                        <a class="nav-link signed-list-link signin-active" href="#" data-attr="Dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a class="nav-link signed-list-link" href="#"  data-attr="Wallet">Wallet</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a class="nav-link signed-list-link" href="#"  data-attr="Mint" data-target="#mint-denarii-modal" data-toggle="modal">Mint</a>
+                    </li>
+                    <li class="nav-item"> 
+                        <a class="nav-link signed-list-link" href="#" data-attr="Learn">Learn</a>
+                    </li>
+                    <li>
+                        <div class="logout-btn-wrapper d-block d-lg-none ">
+                            <button class="btn logout-btn"> Logout</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>  
+            <div class="user-profile-pic d-none d-lg-block" id="user-profile-pic">
+                <!-- added user profile here -->
+                <span class="user-profile-pic">
+                    <img src="assets/images/user-profile-pic.png" alt="Profile">
+                </span>
+
+                <ul class="profile-dropdown-wrapper">
+                    <li class="profile-dropdown-option">
+                        <label for="upload-photo">Change Avatar</label>
+                        <input type="file" name="photo" id="upload-photo" accept=".png, .jpg, .jpeg"/>
+                    </li>
+                    <li class="profile-dropdown-option">
+                        <a href="#"  data-attr="Switch Node"  data-target="#switchNodeModal" data-toggle="modal">Switch Node</a>
+                    </li>
+                    <li class="profile-dropdown-option logout-option">
+                        <button>Logout</button> 
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>

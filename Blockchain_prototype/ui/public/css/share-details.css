@@ -1,0 +1,148 @@
+#shareDetailsSection.share-details-open .backdrop,
+#shareDetailsSection.share-details-open .share-details-wrapper{
+    left: 0;
+}
+
+.share-details-wrapper{
+    font-family: AvertaRegular;
+    background-color: #ffffff;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -webkit-transition: 0.3s all ease-in-out;
+    height: 100vh;
+}
+.share-details-wrapper .share-details-content{
+    padding: 50px 80px;
+}
+.share-details-wrapper .share-details-content .share-details-header .darkshare-details-close-icon{
+    margin-top: 12px;
+    cursor: pointer;
+}
+.share-details-wrapper .share-details-content .share-details-text{
+    margin-top: 130px;
+}
+.share-details-wrapper .share-details-content .share-details-text h4{
+    color: #0c152e;
+    font-size: 28px;
+}
+.share-details-wrapper .share-details-content .share-details-text p{
+    color: #010101;
+    opacity: 0.5;
+    font-size: 10px;
+    margin-top: 15px;
+    line-height: 1.8;
+}
+.share-details-wrapper .share-details-content form{
+    margin-top: 70px;
+}
+.share-details-wrapper .share-details-content form .form-group{
+    position: relative;
+}
+.share-details-wrapper .share-details-content form label{
+    top: 50%;
+    left: 0;
+    color: #010101;
+    opacity: 0.5;
+    font-size: 16px;
+    line-height: 1.13;
+    position: absolute;
+    transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -webkit-transition: 0.3s all ease-in-out;
+}
+.share-details-wrapper .share-details-content form input{
+    color: #010101;
+    border: 0;
+    padding: 0;
+    font-size: 16px;
+    box-shadow: none;
+    line-height: 40px;
+    border-radius: 0;
+    border-bottom: solid 1px #a0a0a0;
+    line-height: 40px;
+}
+.share-details-wrapper .share-details-content form input[type="number"],
+.share-details-wrapper .share-details-content form input[type="number"]::-webkit-inner-spin-button, 
+.share-details-wrapper .share-details-content form input[type="number"]::-webkit-outer-spin-button{
+    padding-right: 22px;
+    -webkit-appearance: none;
+}
+.share-details-wrapper .share-details-content form .form-group input.field-focus + label{	
+    left: 0;
+    top: -15px;	
+    font-size: 10px;	
+}	
+.share-details-wrapper .share-details-content form input[type="number"],
+.share-details-wrapper .share-details-content form input[type="email"]{
+    margin-bottom: 50px;
+}
+.share-details-wrapper .share-details-content form input:focus{
+    box-shadow: none;
+    border-bottom: 1px solid #3f9dfe;
+}
+.share-details-wrapper .share-details-content form input ~ .form-optional{
+    top: 50%;
+    right: 0;
+    color: #010101;
+    opacity: 0.5;
+    position: absolute;
+    font-size: 10px;
+    transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+.share-details-wrapper .share-details-content form button{
+    width: 100%;
+    color: #ffffff;
+    border: 0;
+    padding: 15px;
+    font-size: 15px;
+    margin-top: 55px;
+    text-align: center;
+    line-height: 1.47;
+    border-radius: 3px;
+    background-color: #3f9dfe;
+    font-family: AvertaExtraBold;
+}
+.share-details-wrapper .share-details-content form button:focus,
+.share-details-wrapper .share-details-content form button:active:focus{
+    box-shadow: none !important;
+}
+.share-details-wrapper .share-details-content form input:-webkit-autofill,
+.share-details-wrapper .share-details-content form input:-webkit-autofill:hover,
+.share-details-wrapper .share-details-content form input:-webkit-autofill:focus{
+    color: #010101 !important;
+    background-image: none !important;
+    background-color: #fff !important;
+}
+.logo-icon.darkshare-details-header-logo{
+    width: 218px;
+    height: auto;
+
+}
+
+@media (min-width: 320px) and (max-width: 767px){
+    .share-details-wrapper{
+        width: 100vw;
+        left: -107vw;
+    }
+    .share-details-wrapper .share-details-content{
+        padding: 30px;
+        height: 100vh;
+    }
+    .share-details-wrapper .share-details-content .share-details-text{
+        margin-top: 40px;
+    }
+    .share-details-wrapper .share-details-content form{
+        margin-top: 50px;
+    }
+}

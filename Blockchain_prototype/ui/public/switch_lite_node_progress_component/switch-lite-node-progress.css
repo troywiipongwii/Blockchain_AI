@@ -1,0 +1,83 @@
+.node-progress-overlay{
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 10px 64px 0 rgba(0, 0, 0, 0.47);
+    margin: 20px;
+    max-width: 100%;
+}
+.node-progress-header-wrapper{
+    padding: 25px;
+}
+.progress-header-wrapper,.progress-wrapper{
+    width: 100%;
+}
+.sub-header{
+    font-size: 28px;
+    color: #0c152e;
+    margin-bottom: 8px;
+}
+.progress-content{
+    font-size: 10px;
+    line-height: 1.8;
+    color: #010101;
+    opacity: 0.5;
+}
+.sub-header, .progress-content{
+    font-family: AvertaRegular;
+}
+.progress-bar-loading,.progress-bar-overlay{
+    height: 16px;
+    border-radius: 10px;
+}
+.progress-bar-loading{
+    background-color: #3f9dfe;
+    width: 0;
+}
+.progress-bar-animated-custom {
+    -webkit-animation: progress-bar-stripes-custom 1s linear infinite;
+    animation: progress-bar-stripes-custom 1s linear infinite;
+}
+.progress-bar-overlay{
+    background-color: #e5eaee;
+    width: 100%!important;
+}
+.progress-bar-overlay .progress-bar-striped{
+    background-size: 0.7rem 0.7rem;
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent), to(transparent) );
+    background-image: -moz-linear-gradient( -45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent );
+}
+.modal-open .modal.progress-node-block {
+    overflow: hidden;
+}
+.progress-node-block{
+    top: unset;
+}
+
+@media screen and (min-width: 1024px){
+   .node-progress-overlay{
+        margin: 0 74px 80px;
+    }
+    .progress-header-wrapper,.progress-wrapper{
+        width : 45%;
+    }
+    .node-progress-header-wrapper{
+        padding: 40px 51px 42px;
+        width: 100%;
+    }  
+    .progress-content{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 992px){
+    .progress-wrapper{
+        margin-top: 15px;
+    }
+}
+@keyframes progress-bar-stripes-custom{
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 1rem 0;
+    }
+}

@@ -1,0 +1,127 @@
+.switch-node-popop-innerlay{
+    padding: 54px 20px 18px;
+    min-height: calc(100vh - 40px);
+    border-radius: 6px;
+    margin: 20px;
+    box-shadow: 0 0 19px 0 rgba(0, 0, 0, 0.5);
+}
+.modal.fade.switch-node-popup.show{
+    background-color: rgba(10, 18, 42, 0.9);
+}
+.modal-header.switch-header-wrapper {
+    padding: 0;
+    border: none;
+    margin-bottom: 14px;
+}
+.modal-header.switch-header-wrapper button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.node-popup-header-wrapper h1,.content-block,.lite-node-content, .instruction-content{
+    font-family: AvertaRegular;
+}
+.node-popup-header-wrapper h1{
+    font-size: 28px;
+    color: #0c152e;
+}
+.popup-close{
+    width:14px;
+    height: auto;
+}
+.content-block,.lite-node-content, .instruction-content{
+    opacity: 0.5;
+    font-size: 10px;
+    line-height: 1.8;
+    color: #010101;
+}
+.content-block{
+    margin-bottom: 29px;
+}
+.lite-node-content{
+    margin-bottom: 9px;
+}
+.lite-details-wrapper{
+    border-radius: 4px;
+    background-color: #eeeeee;
+    border: solid 1px #3f9dfe;
+}
+.lite-node-head, .instruction-content,
+.node-popup-btn,.cancel-btn {
+    font-family: AvertaExtraBold;
+}
+.lite-node-head{
+    font-size: 20px;
+    color: #3f9dfe;
+    margin-bottom: 8px;
+}
+.instruction-block img{
+    width: 18px;
+    height: 13px;
+}
+.instruction-content{
+    margin-left: 18px;
+    opacity: unset;
+}
+.node-popup-btn,.cancel-btn{
+    border-radius: 3px;
+    background-color: #3f9dfe;
+    font-size: 15px;
+    line-height: 1.47;
+    color: #fff;
+    padding: 17px 0;
+    border: none;
+    
+}
+.cancel-btn{
+    background-color: #b9b9b9;
+    margin-top: 10px;
+}
+.lite-details-wrapper{
+    padding: 41px 19px 29px;
+}
+.instruction-block{
+    margin-bottom: 19px;
+}
+.node-popup-btn{
+    margin-top: 20px;
+}
+@media screen and (min-width: 1024px){
+    .switch-node-popop-innerlay{
+        padding: 60px 78px;
+        min-height: auto;
+        margin: 0;
+    }
+    .modal-dialog.modal-dialog-centered.switch-node-popup-overlay{
+        max-width: 656.2px;
+    }
+    .modal-header.switch-header-wrapper {
+        margin-bottom: 17px;
+    }
+    .content-block{
+        margin:0 41px 37px 0;
+    }
+    .instruction-block{
+        margin-top: 27px;
+    }
+    .node-instructions-wrap{
+        padding-left: 17px;
+    }
+    .modal-open .modal.switch-node-popup.show{
+        background-color: rgba(10, 18, 42, 0.9);
+    }
+}
+@media screen and (max-width: 992px){
+    .modal-dialog.modal-dialog-centered.switch-node-popup-overlay{
+        margin: 0;
+    }
+    .switch-header-wrapper button{
+        display: none;
+    }
+    .switch-node-popup-overlay{
+        max-width: 100%;
+    }
+    .modal-open .modal.switch-node-popup{
+        background-color: #0c142e;
+    }
+}

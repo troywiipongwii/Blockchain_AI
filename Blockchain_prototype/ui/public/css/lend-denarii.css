@@ -1,0 +1,178 @@
+.lend-denarii-modal-overlay{	
+        max-width: 100%;	
+        max-height: 100vh;	
+        margin: 0;	
+    }	
+    .lend-denarii-modal-innerlay{	
+        height: 100vh;	
+        border-radius: unset;	
+        border:none;	
+        overflow-x: hidden;	
+        overflow-y: auto;	
+        padding: 40px 30px 33px;	
+    }	
+    .lend-denarii-modal-wrapper, .lend-denarii-close{	
+        padding: 0;	
+        border: none;	
+        background-color: transparent;	
+    }	
+    .lend-denarii-logo{	
+        width: 218px;	
+        height: auto;	
+    }	
+    .lend-denarii-close-icon{	
+        width: 14px;	
+        height: auto;	
+    }	
+    .lend-denarii-modal-wrapper{	
+        margin-bottom: 111px;	
+    }	
+    .lend-denarii-header-block .main-header{	
+        font-size: 28px;	
+        line-height: 1.29;	
+        color: #0c152e;	
+        margin-bottom: 17px;	
+    }	
+    .lend-denarii-header-block .content-wrap{	
+        opacity: 0.5;	
+        font-size: 10px;	
+        line-height: 1.8;	
+        color: #010101;	
+        margin-bottom: 43px;	
+    }	
+    .lend-denarii-header-block  .main-header, .lend-denarii-header-block  .content-wrap, 	
+    .lend-denarii-modal-innerlay form .form-group label, .lend-denarii-modal-innerlay form  .form-group input{	
+        font-family: AvertaRegular;	
+    }	
+    .lend-denarii-modal-innerlay form .form-group label{	
+        left: 50%;	
+        top: 50%;	
+        color: #010101;	
+        opacity: 0.5;	
+        font-size: 16px;	
+        line-height: 1.13;	
+        position: absolute;	
+        text-align: center;	
+        padding-bottom: 17px;	
+        transform: translateY(-50%);	
+        -o-transform: translateY(-50%);	
+        -moz-transform: translateY(-50%);	
+        -webkit-transform: translateY(-50%);	
+        transition: 0.3s all ease-in-out;	
+        -o-transition: 0.3s all ease-in-out;	
+        -moz-transition: 0.3s all ease-in-out;	
+        -webkit-transition: 0.3s all ease-in-out;	
+        transform: translate(-50%);	
+        z-index: 0;	
+        width: 100%;
+    }	
+    .lend-denarii-modal-innerlay form .form-group{	
+        position: relative;	
+    }	
+    .form-value.field-focus ~ .increment-icon, 	
+    .form-value.field-focus ~ .decrement-icon{	
+        cursor: pointer;	
+        width: 38px;	
+        height: 38px;	
+        position: absolute;	
+        z-index: 1000;	
+    }	
+    .form-value.field-focus ~ .increment-icon{	
+        background: url('../assets/images/increment-icon.png') no-repeat;	
+        left: 0;	
+        background-size: 38px 38px;	
+    }	
+    .form-value.field-focus ~ .decrement-icon{	
+        background: url('../assets/images/decrement-icon.png') no-repeat;	
+        right: 0;	
+        background-size: 38px 38px;	
+    }	
+    .lend-denarii-modal-innerlay form .form-group .form-value.field-focus {	
+        border-bottom: 2px solid #3f9dfe;	
+    }	
+    .lend-denarii-modal-innerlay form .form-group .form-value.field-focus + label{	
+        top: -15px;	
+        font-size: 10px;	
+    }	
+    .lend-denarii-modal-innerlay form  .form-group input{	
+        font-size: 22px;
+        color: rgba(1, 1, 1, 0.5);
+        padding: 0;	
+        border: none;	
+        border-bottom: solid 1px #a0a0a0;	
+        border-radius: 0;	
+        -webkit-appearance: none;	
+        padding-bottom: 17px;	
+        text-align: center;	
+        z-index: 1;	
+        background-color: transparent;	
+        line-height: 40px;
+    }	
+    .lend-denarii-modal-innerlay form  .form-group input.lend-amount-value{
+        font-size: 48px;	
+        color: #0c152e;
+        opacity: 1;
+    }
+    .lend-block{	
+        margin-bottom: 25px;	
+    }	
+    .lend-submit-btn-wrap, .denarii-btn, .lend-denarii-modal-innerlay form  .form-group input{	
+        width: 100%;	
+    }	
+    .denarii-btn{	
+        padding: 17px 0;	
+        border: none;	
+        border-radius: 3px;	
+        background-color: #3f9dfe;	
+        font-size: 15px;	
+        line-height: 1.47;	
+        color: #fff;	
+        font-family: AvertaExtraBold;	
+    }	
+    .lend-denarii-modal-innerlay form .form-group{	
+        margin-bottom: 30px;	
+    }	
+    .lend-denarii-modal-innerlay form .form-group{	
+        margin-bottom: 30px;	
+    }	
+    .denarii-submit-btn-wrap{	
+        margin-top: 34px;	
+    }	
+    @media screen and (min-width: 1024px){	
+    .lend-denarii-modal-overlay{	
+        opacity: 1;	
+    }	
+    .lend-denarii-modal-innerlay{	
+        padding: 50px 77px 98px;	
+    }	
+    .lend-denarii-modal-wrapper{	
+        margin-bottom: 99px;	
+    }	
+    .lend-denarii-header-block .content-wrap{	
+        margin-bottom: 69px;	
+        width: 35%;	
+    }	
+    .denarii-submit-btn-wrap, .lend-denarii-field-block{	
+        width: 100%;	
+    }	
+    .duration-block, .estimated-block, .denarii-btn{	
+        width: 49%;	
+    }	
+    .lend-denarii-form{	
+        width: 900px;	
+    }	
+    .expected-interest-rate .form-value.field-focus ~  .increment-icon{	
+        left: 35%;	
+    }	
+    .expected-interest-rate .form-value.field-focus ~  .decrement-icon{	
+        right: 35%;	
+    }	
+    .denarii-submit-btn-wrap{	
+        margin-top: 43px;	
+    }	
+}
+@media screen and (max-width: 992px){
+    .lend-denarii-field-block{
+        width: 100%;
+    }
+}

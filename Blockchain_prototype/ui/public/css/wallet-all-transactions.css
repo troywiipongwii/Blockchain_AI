@@ -1,0 +1,67 @@
+.dashboard-component-main-wrapper.wallet-all-transaction-main-wrapper .dashboard-detail-heading{
+    padding: 0 20px 12px;
+}
+.dashboard-component-main-wrapper.wallet-all-transaction-main-wrapper .dashboard-detail-heading select{
+    padding: 0;
+    color: #3f9dfe;
+    -webkit-appearance: none;
+    direction: rtl;
+    border: none;
+    background: transparent;
+    text-transform: capitalize;
+    float: right;
+}
+span.dashboard-recent-transaction-value {
+    font-size: 18px;
+    color: #121d38;
+    font-family: AvertaRegular;
+    margin-bottom: 7px;
+}
+.dashboard-wallet-label {
+    font-size: 10px;
+    color: #878fa4;
+    text-transform: capitalize;
+    font-family: AvertaBold;
+}
+span.dashboard-recent-transaction-list-status {
+    border-radius: 3px;
+    background-color: rgba(63, 157, 254, 0.1);
+    border: solid 1px #3f9dfe;
+    font-size: 10px;
+    line-height: 2.2;
+    color: #3f9dfe;
+    font-family: AvertaBold;
+    padding: 3px 0;
+    width: 75px;
+    text-align: center;
+    display: block;
+    margin: 0 0 0 auto;
+}
+.all-transactions-table-wrap{
+    padding-left: 20px;
+    flex: 1;
+    height: 100%;
+}
+.all-transactions-table-wrap .table tr td{
+    padding: 16px .75rem 17px 0;
+    border: none;
+    border-bottom: 1px solid #c3c3c3;
+}
+.all-transactions-table-wrap .table tr:last-child td{
+    border: none;
+}
+.all-transactions-table-wrap .table tr td:not(:first-child):not(:last-child){
+    display: none;
+}
+span.dashboard-recent-transaction-value.credit-transaction{
+    color: #93c65c;
+}
+span.dashboard-recent-transaction-value.debit-transaction{
+    color: #d44556;
+}
+@media screen and (min-width: 992px){
+    .all-transactions-table-wrap .table tr td:not(:first-child):not(:last-child){
+        display: table-cell;
+    }
+}
+

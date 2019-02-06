@@ -1,0 +1,190 @@
+.contact-us-popup-overlay{
+    max-width: 100%;
+    max-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+}
+.contact-us-popop-innerlay{
+    height: 100vh;
+    border-radius: unset;
+    border:none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    position: fixed;
+}
+.contact-us-popup-wrapper, .contact-popup-close{
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+button.contact-popup-close img {
+    width: 14px;
+}
+.contact-us-logo{
+    width: 218px;
+    height: auto;
+}
+
+.contact-header, .contact-info, .form-group input, .contact-us-popop-innerlay form .form-group label{
+    font-family: AvertaRegular;
+}
+.contact-header{
+    font-size: 28px; 
+    color: #0c152e;
+}
+.contact-info{
+    opacity: 0.5;
+    font-size: 10px;
+    line-height: 1.8;
+    color: #010101;
+}
+div#enter-passkey-modal .contact-info{
+    max-width: 490px;
+}
+.contact-us-popop-innerlay form  .form-group input{
+    font-size: 34px;
+    color: #0c152e;
+    padding: 0;
+    border: none;
+    border-bottom: solid 1px #a0a0a0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    padding-bottom: 17px;
+    text-align: center;
+    z-index: 1;
+    background-color: transparent;
+    line-height: 40px;
+}
+.contact-btn-wrap{
+    width: 100%;
+}
+.contact-us-popop-innerlay form .form-group label{
+    left: 50%;
+    top: 50%;
+    color: #010101;
+    opacity: 0.5;
+    font-size: 16px;
+    line-height: 1.13;
+    position: absolute;
+    text-align: center;
+    padding-bottom: 17px;
+    transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -webkit-transition: 0.3s all ease-in-out;
+    transform: translate(-50%);
+    z-index: 0;
+    width: 100%;
+}
+.contact-us-popop-innerlay form .form-group .form-control.field-focus {
+    border-bottom: 2px solid #3f9dfe;
+}
+
+.contact-us-popop-innerlay form .form-group .form-control.field-focus + label{
+    top: -15px;
+    font-size: 10px;
+   
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+.contact-us-popop-innerlay form .form-group{
+    position: relative;
+}
+.contact-us-popop-innerlay form .form-group input:focus{
+    box-shadow: none;
+}
+.contact-form-submit{
+    padding: 17px;
+    border-radius: 3px;
+    background-color: #3f9dfe;
+    font-family: AvertaExtraBold;
+    font-size: 15px;
+    width: 100%;
+    line-height: 1.47;
+    color: #fff;
+    border: none;
+    
+}
+.contact-us-popop-innerlay{
+    padding: 50px 20px;
+}
+.contact-header{
+    margin-bottom: 17px;
+}
+.contact-header-wrap{
+    margin-bottom: 35px;
+}
+.contact-us-popop-innerlay form .form-group{
+    margin-bottom: 20px;
+}
+@media screen and (min-width: 1024px){
+    .contact-us-popup-overlay{
+        opacity: 1;
+    }
+    .contact-us-popop-innerlay{
+        padding: 51px 79px 108px;
+    }
+    .contact-us-popup-wrapper{
+        margin-bottom: 122px;
+    }
+    div#enter-passkey-modal .contact-header-wrap{
+        margin-bottom: 10%;
+    }
+    .email-block, .mobile-number-block{
+        width: 49%;
+    }
+    .form-block{
+        width: 100%;
+    }
+    div#enter-passkey-modal .contact-form{
+        max-width: 899px;
+        width: 80%;
+    }
+    div#enter-passkey-modal .contact-us-popop-innerlay form .form-group{
+        margin-bottom: 77px;
+    }
+    .contact-form .form-group input{
+        text-align: center;
+    }
+    .form-group input{
+        font-size: 24px;
+    }
+    .contact-us-popop-innerlay form .form-group label{
+        text-align: center;
+    }
+    div#enter-passkey-modal .contact-form-submit {
+        width: 50%;
+        max-width: 442px;
+    }
+}
+@media screen and (max-width:992px){
+    .contact-us-popup-container{
+        margin-top: 100px;
+    }
+    .form-group {
+        width: 100%;
+    }
+    .contact-btn-wrap{
+        margin: 30px 0;
+    }
+    .contact-us-popop-innerlay form .form-group input{
+        font-size: 18px;
+    }
+}
+@media screen and (min-width:1440px){
+    .contact-us-popup.show {
+        height: 100vh;
+    }
+}

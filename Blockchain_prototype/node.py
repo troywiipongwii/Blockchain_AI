@@ -1,22 +1,33 @@
-from flask import Flask, jsonify, request, send_from_directory
+from flask import Flask, jsonify, request, send_from_directory, session
 from flask_cors import CORS
 
 from wallet import Wallet
 from blockchain import Blockchain
-
-app = Flask(__name__)
+import os
+app = Flask(__name__, static_folder ="ui")
 CORS(app)
 
 
 @app.route('/', methods=['GET'])
 def get_node_ui():
-    return send_from_directory('ui', 'node.html')
+    if not session.get('logged_in'):
+        return send_from_directory('ui','index.html')  
+    else:    
+        return send_from_directory('ui', 'node.html')
 
 
 @app.route('/network', methods=['GET'])
 def get_network_ui():
     return send_from_directory('ui', 'network.html')
 
+@app.route('/login', methods=['POST'])
+def do_admin_login():
+
+    #if request.form['password'] == 'password' and request.form['username'] == 'test@test.com':
+    session['logged_in'] = True
+    #else:
+    #flash('wrong password!')
+    return send_from_directory('ui','node.html') 
 
 @app.route('/wallet', methods=['POST'])
 def create_keys():
@@ -269,6 +280,7 @@ def get_nodes():
 
 
 if __name__ == '__main__':
+    app.secret_key = os.urandom(12)
     from argparse import ArgumentParser
     parser = ArgumentParser()
     parser.add_argument('-p', '--port', type=int, default=5000)

@@ -1,0 +1,237 @@
+#loginSection.login-open .backdrop,
+#loginSection.login-open .unsigned-login-wrapper,
+#loginSection.forgotpwd-open .backdrop,
+#loginSection.forgotpwd-open .unsigned-forgotpwd-wrapper,
+#loginSection.signup-open .backdrop,
+#loginSection.signup-open .join-signup-wrapper{
+    left: 0;
+    opacity: 1;
+}
+.unsigned-login-wrapper,
+.unsigned-forgotpwd-wrapper,
+.join-signup-wrapper{
+    top: 0;
+    left: -100%;
+    bottom: 0;
+    z-index: 2;
+    width: 600px;
+    height: 100vh;
+    overflow: auto;
+    position: fixed;
+    box-shadow: 0 0 19px 0 rgba(0, 0, 0, 0.5);
+    font-family: AvertaRegular;
+    background-color: rgba(255,255,255);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -webkit-transition: 0.3s all ease-in-out;
+}
+.unsigned-login-wrapper{
+    opacity: 0.95;
+}
+.unsigned-login-wrapper .login-content,
+.unsigned-forgotpwd-wrapper .forgotpwd-content,
+.join-signup-wrapper .signup-content{
+    padding: 50px 80px;
+    height: 100%;
+}
+.unsigned-login-wrapper .login-content .login-header #dark-close-icon,
+.unsigned-forgotpwd-wrapper .forgotpwd-content .forgotpwd-header .darkpwd-close-icon,
+.join-signup-wrapper .signup-content .signup-header .darksignup-close-icon{
+    margin-top: 12px;
+    cursor: pointer;
+}
+.unsigned-login-wrapper .login-content .login-text,
+.unsigned-forgotpwd-wrapper .forgotpwd-content .forgotpwd-text,
+.join-signup-wrapper .signup-content .signup-text{
+    margin-top: 130px;
+}
+.unsigned-login-wrapper .login-content .login-text h4,
+.unsigned-forgotpwd-wrapper .forgotpwd-content .forgotpwd-text h4,
+.join-signup-wrapper .signup-content .signup-text h4{
+    color: #0c152e;
+    font-size: 28px;
+}
+.unsigned-login-wrapper .login-content .login-text p,
+.unsigned-forgotpwd-wrapper .forgotpwd-content .forgotpwd-text p,
+.join-signup-wrapper .signup-content .signup-text p{
+    color: #010101;
+    opacity: 0.5;
+    font-size: 10px;
+    margin-top: 15px;
+    line-height: 1.8;
+}
+.unsigned-forgotpwd-wrapper .forgotpwd-content form,
+.join-signup-wrapper .signup-content form{
+    margin-top: 70px;
+}
+.unsigned-login-wrapper .login-content form .form-group,
+.unsigned-forgotpwd-wrapper .forgotpwd-content form .form-group,
+.join-signup-wrapper .signup-content form .form-group{
+    position: relative;
+}
+.unsigned-login-wrapper .login-content form label,
+.unsigned-forgotpwd-wrapper .forgotpwd-content form label,
+.join-signup-wrapper .signup-content form label{
+    top: 50%;
+    left: 0;
+    color: #010101;
+    opacity: 0.5;
+    font-size: 16px;
+    line-height: 1.13;
+    position: absolute;
+    transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -webkit-transition: 0.3s all ease-in-out;
+    z-index: 0;
+}
+.unsigned-login-wrapper .login-content form input,
+.unsigned-forgotpwd-wrapper .forgotpwd-content form input,
+.join-signup-wrapper .signup-content form input{
+    color: #010101;
+    border: 0;
+    padding: 0;
+    font-size: 16px;
+    box-shadow: none;
+    line-height: 40px;
+    border-radius: 0;
+    border-bottom: solid 1px #a0a0a0;
+    z-index: 1;
+    background-color: transparent;
+}
+.unsigned-login-wrapper .login-content form .form-group input.field-focus + label, 
+.join-signup-wrapper .signup-content form input.field-focus + label{
+    left: 0;
+    top: -6px;
+    font-size: 10px;
+}
+.unsigned-login-wrapper .login-content form .form-group input:focus + label,
+.unsigned-forgotpwd-wrapper .forgotpwd-content form .form-group input:focus + label,
+.join-signup-wrapper .signup-content form .form-group input:focus + label{
+    left: 0;
+    top: -6px;
+    font-size: 10px;
+}
+.unsigned-login-wrapper .login-content form input[type="email"],
+.unsigned-forgotpwd-wrapper .forgotpwd-content form input[type="email"],
+.join-signup-wrapper .signup-content form input[type="text"]{
+    margin-bottom: 50px;
+}
+.unsigned-login-wrapper .login-content form input:focus,
+.unsigned-forgotpwd-wrapper .forgotpwd-content form input:focus,
+.join-signup-wrapper .signup-content form input:focus{
+    box-shadow: none;
+    border-bottom: 1px solid #3f9dfe;
+
+}
+.unsigned-login-wrapper .login-content form .forgot-pwd,
+.unsigned-login-wrapper .login-content form .sign-up,
+.join-signup-wrapper .signup-content form .sign-in{
+    color: #3f9dfe;
+    font-size: 12px;
+    line-height: 1.5;
+    font-family: AvertaBold;
+    text-decoration: underline;
+}
+.unsigned-login-wrapper .login-content form .forgot-pwd{
+    margin-top: 55px;
+}
+.unsigned-login-wrapper .login-content form .sign-up{
+    margin-top: 22px;
+}
+.join-signup-wrapper .signup-content form .sign-in{
+    margin-top: 55px;
+}
+.unsigned-login-wrapper .login-content form .file-btn-wrap .file-btn,
+.unsigned-forgotpwd-wrapper .forgotpwd-content form button,
+.join-signup-wrapper .signup-content form button{
+    width: 100%;
+    color: #ffffff;
+    border: 0;
+    padding: 15px;
+    font-size: 15px;
+    margin-top: 55px;
+    text-align: center;
+    line-height: 1.47;
+    border-radius: 3px;
+    background-color: #3f9dfe;
+}
+.join-signup-wrapper .signup-content form button, .unsigned-login-wrapper .login-content form .file-btn-wrap .file-btn{
+    font-family: AvertaExtraBold;
+}
+.unsigned-login-wrapper .login-content form .file-btn-wrap .file-btn{
+    opacity: 1;
+    cursor: pointer;
+    
+}
+.unsigned-login-wrapper .login-content form button:focus,
+.unsigned-forgotpwd-wrapper .forgotpwd-content form button:focus,
+.join-signup-wrapper .signup-content form button:focus,
+.unsigned-login-wrapper .login-content form button:active:focus,
+.unsigned-forgotpwd-wrapper .forgotpwd-content form button:active:focus,
+.join-signup-wrapper .signup-content form button:active:focus{
+    box-shadow: none !important;
+}
+.unsigned-login-wrapper .login-content form input:-webkit-autofill,
+.unsigned-forgotpwd-wrapper .forgotpwd-content form input:-webkit-autofill,
+.join-signup-wrapper .signup-content form input:-webkit-autofill,
+.unsigned-login-wrapper .login-content form input:-webkit-autofill:hover,
+.unsigned-forgotpwd-wrapper .forgotpwd-content form input:-webkit-autofill:hover,
+.join-signup-wrapper .signup-content form input:-webkit-autofill:hover, 
+.unsigned-login-wrapper .login-content form input:-webkit-autofill:focus,
+.unsigned-forgotpwd-wrapper .forgotpwd-content form input:-webkit-autofill:focus,
+.join-signup-wrapper .signup-content form input:-webkit-autofill:focus{
+    color: #010101 !important;
+    background-image: none !important;
+    background-color: #fff !important;
+}
+
+.file-btn-wrap{
+    position: relative;
+}
+.unsigned-login-wrapper .login-content form{
+    margin-top: 139px;
+}
+@media (min-width: 320px) and (max-width: 767px){
+    .backdrop{
+        display: none;
+    }
+    .unsigned-login-wrapper,
+    .unsigned-forgotpwd-wrapper,
+    .join-signup-wrapper{
+        width: 100vw;
+        left: -107vw;
+    }
+    .unsigned-login-wrapper .login-content,
+    .unsigned-forgotpwd-wrapper .forgotpwd-content,
+    .join-signup-wrapper .signup-content{
+        padding: 30px;
+        height: 100%;
+    }
+    .unsigned-login-wrapper .login-content .login-text,
+    .unsigned-forgotpwd-wrapper .forgotpwd-content .forgotpwd-text,
+    .join-signup-wrapper .signup-content .signup-text{
+        margin-top: 40px;
+    }
+    .unsigned-login-wrapper .login-content form,
+    .unsigned-forgotpwd-wrapper .forgotpwd-content form,
+    .join-signup-wrapper .signup-content form{
+        margin-top: 50px;
+    }
+    #loginSection.login-open .backdrop,
+    #loginSection.login-open .unsigned-login-wrapper,
+    #loginSection.forgotpwd-open .backdrop,
+    #loginSection.forgotpwd-open .unsigned-forgotpwd-wrapper,
+    #loginSection.signup-open .backdrop,
+    #loginSection.signup-open .join-signup-wrapper{
+        opacity: 1;
+    }
+    
+}

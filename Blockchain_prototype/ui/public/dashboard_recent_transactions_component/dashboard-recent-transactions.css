@@ -1,0 +1,39 @@
+
+.dashboard-recet-transactions-main-wrapper .dashboard-detail-heading{
+    padding: 0 20px 28px;
+}
+.dashboard-recet-transactions-main-wrapper .dashboard-detail-heading a{
+    color: #3f9dfe;
+    text-transform: capitalize;
+}
+.dashboard-recent-transaction-list-wrap {
+    padding: 0 0 12px 19px;
+}
+.dashboard-recent-transaction-list-item {
+    padding: 16px 19px 17px 0;
+    border-bottom: solid 1px #c3c3c3;
+}
+.dashboard-recent-transaction-list-item:first-child{
+    padding-top: 0;
+}
+.dashboard-recent-transaction-list-item:last-child{
+    border: none;
+}
+span.dashboard-recent-transaction-value {
+    font-size: 18px;
+    color: #121d38;
+    font-family: AvertaRegular;
+    margin-bottom: 7px;
+}
+span.dashboard-recent-transaction-list-status {
+    border-radius: 3px;
+    background-color: rgba(63, 157, 254, 0.1);
+    border: solid 1px #3f9dfe;
+    font-size: 10px;
+    line-height: 2.2;
+    color: #3f9dfe;
+    font-family: AvertaBold;
+    padding: 5px 0;
+    width: 75px;
+    text-align: center;
+}

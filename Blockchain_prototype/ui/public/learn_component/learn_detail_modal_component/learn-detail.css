@@ -1,0 +1,89 @@
+.learn-detail-modal-container.modal-dialog{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    max-width: none;
+}
+.learn-detail-modal-container .modal-content{
+    margin: 0 20px;
+    border-radius: 6px;
+    background-color: rgba(255,255,255);
+    box-shadow: 0 0 19px 0 rgba(0, 0, 0, 0.5);
+    max-height: 80vh;
+}
+.learn-detail-modal-container .modal-header,.learn-detail-modal-container .modal-body,
+.learn-detail-modal-container .modal-footer{
+    border: none;
+    padding: 0;
+    display: block;
+    border: none;
+}
+.learn-detail-modal-container .modal-header .close{
+    line-height: 0;
+    padding: 36px 34px 44px;
+    margin: 0 0 0 auto;
+}
+.learn-detail-modal-container .modal-body{
+    max-height: 40%;
+    overflow: auto;
+    overflow-x: hidden;
+}
+.learn-detail-modal-container .modal-body,
+.learn-detail-modal-container .modal-footer{
+    padding: 0 20px;
+}
+h3.learn-detail-quiz-header {
+    font-size: 28px;
+    color: #0c152e;
+    margin-bottom: 25px;
+}
+span.learn-detail-quiz-question{
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(1,1,1,0.5);
+    display: block;
+}
+h3.learn-detail-quiz-header,span.learn-detail-quiz-question{
+    text-align: center;
+    font-family: AvertaRegular;
+}
+.learn-detail-modal-container .modal-footer{
+    padding: 60px 20px 14px;
+}
+.learn-detail-modal-container .modal-footer .learn-detail-quiz-option{
+    margin: 0;
+    padding: 0;
+    height: 57px;
+    width: 100%;
+    border-radius: 3px;
+    border: solid 3px #389bff;
+    background: none;
+    font-size: 15px;
+    color: #3f9dfe;
+    font-family: AvertaExtraBold;
+    margin-bottom: 10px;
+    transition: all 0.25s;
+}
+.learn-detail-modal-container .modal-footer .learn-detail-quiz-option:hover{
+    background: #3f9dfe;
+    color: #fff;
+    border: solid 3px transparent;
+}
+@media screen and (min-width:992px){
+    .learn-detail-modal-container .modal-content{
+        border-radius: 0;
+        max-width: 603px;
+    }
+    .learn-detail-modal-container .modal-header .close{
+        padding: 45px 58px 16px;
+    }
+    h3.learn-detail-quiz-header {
+        margin-bottom: 17px;
+    }
+    .learn-detail-modal-container .modal-body{
+        padding: 0 60px;
+    }
+    .learn-detail-modal-container .modal-footer{
+        padding: 46px 80px 71px;
+    }
+}

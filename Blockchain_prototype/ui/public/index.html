@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>The Digital Reserve</title>
+        <meta name="description" content="The most powerful innovation unleashed by Bitcoin is the creation of the opt-in economy. Our mission is to build an economic platform that includes everyone. How? Denarii.">
+        <link rel="canonical" href="index.html">
+        <meta name="author" content="The Digital Reserve">
+        <link rel="icon" type="image/x-icon" href="public/assets/images/favicon.ico">
+        <link rel="apple-touch-icon" href="public/assets/images/custom-favicon.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="preload" href="public/css/common.css" as="style" onload="this.rel='stylesheet'"> <noscript><link rel="stylesheet" href="public/css/style.css"></noscript>
+        <script>
+            /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */ !function(a){"use strict";var b=function(b,c,d){function j(a){if(e.body)return a();setTimeout(function(){j(a)})}function l(){f.addEventListener&&f.removeEventListener("load",l),f.media=d||"all"}var g,e=a.document,f=e.createElement("link");if(c)g=c;else{var h=(e.body||e.getElementsByTagName("head")[0]).childNodes;g=h[h.length-1]}var i=e.styleSheets;f.rel="stylesheet",f.href=b,f.media="only x",j(function(){g.parentNode.insertBefore(f,c?g:g.nextSibling)});var k=function(a){for(var b=f.href,c=i.length;c--;)if(i[c].href===b)return a();setTimeout(function(){k(a)})};return f.addEventListener&&f.addEventListener("load",l),f.onloadcssdefined=k,k(l),f};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this); /*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */ !function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(a){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+        </script>
+        <link rel="stylesheet" href="public/css/login.css">
+        <link rel="stylesheet" href="public/css/enter_passkey.css">
+        <link rel="stylesheet" href="public/css/share-details.css">
+        <link rel="stylesheet" href="public/css/unsigned-header.css">
+        <link rel="stylesheet" href="public/css/footer.css">
+        <link rel="stylesheet" href="public/css/contact-us-popup.css">
+        <link rel="stylesheet" href="public/css/about-us.css">
+        <link rel="stylesheet" href="public/css/home.css">
+        <link rel="stylesheet" href="public/css/faq.css">
+        <link rel="stylesheet" href="public/css/keystore-file.css">
+        <link href="public/css/jquery.toast.min.css" rel="stylesheet" type="text/css" />
+        
+    </head>
+    <body>
+<header id="main-header">
+    <nav class="navbar navbar-expand-lg justify-content-between header-wrapper">
+        <a class="navbar-brand header-text-wrap" href="#">
+            <img src="public/assets/images/dark-home-logo.png" class="d-block logo-icon home-navigation" id="dark-header-logo" alt="The Digital Reserve">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navbar-menu" data-target="#navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon toggle-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-md-end align-items-md-end  justify-content-sm-start flex-sm-column collapse-wrapper">
+            <ul class="navbar-nav nav-items-wrap">
+            <li>
+                <div class="menu-list-items d-flex justify-content-between align-items-center">
+                    <div class="d-flex flex-sm-row align-items-center">
+                        <img src="public/assets/images/collapsable-menu-icon.png" class="mobile-light-header-logo">
+                        <span class="menu-header">The Digital Reserve</span> 
+                    </div>
+                    <img src="public/assets/images/dark-close-icon.png" class="close-icon">
+                </div>
+            </li>
+            <li class="mobile-menubar-overlay d-flex">
+                <ul class="inner-list-menu d-flex">
+                    <li class="nav-item active">
+                        <a class="nav-link list-link navigation-link" href="#" data-attr="Home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item" >
+                        <a class="nav-link list-link navigation-link" href="#"  data-attr="AboutUs">About Us</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a class="nav-link list-link navigation-link" href="#"  data-attr="FAQ">FAQ</a>
+                    </li>
+                    <li class="nav-item"> 
+                        <a class="nav-link list-link navigation-link" href="#" data-target="#contact-us-modal" data-toggle="modal" data-attr="ContactUs">Contact Us</a>
+                    </li>
+                   
+                    <li>
+                        <div class="btn-wrapper">
+                            <button class="btn login-btn"> Login</button>
+                            <button class="btn revolution-btn">Join the Revolution!</button>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            </ul>
+        </div>  
+    </nav>
+</header>
+<section id="loginSection">
+<div class="unsigned-login-wrapper">
+    <div class="login-content updated-value-block">
+        <div class="login-header">
+            <img src="public/assets/images/light-home-logo.png" class="logo-icon" id="dark-header-logo" alt="The Digital Reserve">
+            <img src="public/assets/images/light-close-icon.png" class="float-right" id="dark-close-icon" alt="close">
+        </div>
+        <div class="login-text">
+            <h4>
+                Login to access your account!
+            </h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+            </p>
+        </div>
+        <form action="{{url('login_user')}}" method="post">
+            {{csrf_field()}}
+            <div class="form-group">
+                <input type="email" class="form-control" id="loginEmail" autocomplete="false" name="email" required>
+                <label for="loginEmail">Enter your email…</label>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="loginPassword" autocomplete="false" name="password" required>
+                <label for="loginEmail">Enter your password…</label>
+            </div>
+            
+            <div class="file-btn-wrap">
+                <button type="submit" class="btn btn-primary d-block">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="unsigned-forgotpwd-wrapper">
+    <div class="forgotpwd-content">
+        <div class="forgotpwd-header">
+            <img src="public/assets/images/light-home-logo.png" class="logo-icon darkpwd-header-logo" alt="The Digital Reserve">
+            <img src="public/assets/images/light-close-icon.png" class="float-right darkpwd-close-icon" alt="close">
+        </div>
+        <div class="forgotpwd-text">
+            <h4>
+                Forgot Password?
+            </h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+            </p>
+        </div>
+        <form>
+            <div class="form-group">
+                <input type="email" class="form-control" id="forgotpwdEmail" required>
+                <label for="forgotpwdEmail">Email ID</label>
+            </div>
+            <button type="submit" class="btn btn-primary d-block">Reset Password</button>
+        </form>
+    </div>
+</div>
+<div class="join-signup-wrapper">
+    <div class="signup-content updated-value-block">
+        <div class="signup-header ">
+            <img src="public/assets/images/light-home-logo.png" class="logo-icon darksignup-header-logo" alt="The Digital Reserve">
+            <img src="public/assets/images/light-close-icon.png" class="float-right darksignup-close-icon" alt="close">
+        </div>
+        <div class="signup-text">
+            <h4>
+                Create new wallet to get started!
+            </h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+            </p>
+        </div>
+        <form action="{{url('submit_user')}}" method="post">
+            {{csrf_field()}}
+            <div class="form-group">
+                <input type="email" class="form-control" id="signupemail" name="email" autocomplete="false" required>
+                <label for="signupemail">Enter Email</label>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" id="signupPwd" autocomplete="false" required>
+                <label for="signupPwd">Enter Password</label>
+            </div>
+            <button type="submit" class="btn btn-primary d-block" data-target="#keystore-denarii-modal" data-toggle="modal" >Create new User</button>
+            <div class="form-group">
+                <a href="javascript:void(0);" id="signIn" class="d-block sign-in">Existing user? Sign In!</a>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="backdrop"></div>
+</section>
+<div class="home-container-wrapper">
+    <div class="home-header-container">
+        <div class="home-wrapper">
+            <div class="home-sub-header-wrap nodes-image-wrapper">
+                <span class="node-image"></span>
+                <div class="home-container-block d-block">
+                    <div class="home-text-wrapper">
+                        <h1 class="home-subheader">Cryptocurrency Meets <span>Inclusive Economics</span>.</h1>
+                        <p class="home-context"> 
+                            The most powerful innovation unleashed by Bitcoin is the creation of the opt-in economy. 
+                            Our mission is to build an economic platform that includes everyone. How? Denarii.
+                        </p>
+                        <div class="JoinRevoltion-wrapper">
+                            <a class="revolution-btn" href="javascript:void(0)">Join the Revolution!</a>
+                            <a href="javascript:void(0)">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="homedashboard-img">
+                        <img src="public/assets/images/dashboard-right.png" alt="image not found" class="desktop-homedashboard-img d-none d-sm-none d-md-none d-lg-block">
+                        <img src="public/assets/images/mobile-dashboard.png" alt="image not found" class="mobile-homedashboard-img d-block d-sm-block d-md-block d-lg-none" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="digital-reserve-wrapper">
+        <div class="more-digitalr-wrapper">
+            <div class="more-digitalr-heading">
+                <h1 class="more-digitalr-subheader">Do more with Digital Reserve!</h1>
+                <p class="more-digitalr-context"> 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
+                </p>
+            </div>
+            <div class="more-digitalr-list">
+                <ul>
+                    <li>
+                        <h4>What is the Digital Reserve Network?</h4>
+                        <p>The Digital Reserve Network (DRN)  is a peer-to-peer payment and lending network protocol that uses its own cryptocurrency - Denarii.</p>
+                    </li>
+                    <li>
+                        <h4>A Better Way to Borrow.</h4>
+                        <p>We eliminate predatory lending practices. The DRN features an inclusive marketplace for the uncollateralized lending of Denarii.</p>
+                    </li>
+                    <li>
+                        <h4>Mint Blocks. Earn Denarii.</h4>
+                        <p>The DRN protocol builds its Denarii reserves for loans with the network fees paid by minters.</p>
+                    </li>
+                </ul>
+                <a href="javascript:void(0);" class="more-digitalr-knowmore">Learn More</a>
+            </div>
+        </div>
+        <div class="whats-digitalr-wrapper">
+            <div class="whats-tdr-video-wrapper">
+                <img src="public/assets/images/whats-tdr-video1.png" alt="tdr-video" class="whats-tdr-img d-none d-sm-none d-md-none d-lg-block">
+                <img src="public/assets/images/whats-tdr-video.png" alt="tdr-video" class="whats-tdr-img d-block d-sm-block d-md-block d-lg-none">
+            </div>
+            <div class="whats-tdr-content-wrapper">
+                <h1 class="whats-tdr-heading">What is The Digital Reserve?</h1>
+                <p class="whats-tdr-content">
+                    The DRN is a peer-to-peer payment and lending platform designed to create a sustainable model for financial inclusion while producing economic incentives for network stakeholders.  The DRN aims to incentivize financial literacy through learning-based rewards and the elimination of predatory lending practices within the network.
+                </p>
+                <a class="more-digitalr-knowmore" href="javascripy:void(0)">
+                    Know More
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="tdr-working-wrapper">
+        <div class="tdr-working-heading">
+            <h1>How it works?</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
+            </p>
+            <div class="tdr-working-options">
+                <ul class="d-flex align-items-center justify-content-center nav">
+                    <li class="active">
+                        <a class="nav-link active" href="#borrower" role="tab" data-toggle="tab">
+                            I'm a Borrower
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#lender" role="tab" data-toggle="tab">
+                            I'm a Lender
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class= "tab-content">
+            <div class="tab-pane fade show in active" role="tabpanel"  id="borrower">
+                <div class="tdr-working-list">
+                    <div class="tdr-working-list-index d-none d-lg-block">
+                        <ul class="d-flex tdr-working-list-wrapper">
+                            <li class="justify-content-start tdr-working-list-section">
+                                1.
+                            </li>
+                            <li class="justify-content-start tdr-working-list-section">
+                                2.
+                            </li>
+                            <li class="justify-content-start tdr-working-list-section"> 
+                                3.
+                            </li>
+                            <li class="justify-content-start tdr-working-list-section">
+                                4.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tdr-working-list-contents">
+                        <div class="about-us-reputation-wrapper d-flex flex-column flex-lg-row flex-lg-wrap justify-content-lg-between">
+                            <div class="reputation-wrap">
+                                <span class="d-block d-lg-none">1.</span>
+                                <img src="public/assets/images/edit-1-icon.png" alt="image-not-found" class="reputation-icons">
+                                <h1 class="reputation-header">Sign Up and Verification.</h1>
+                                <p class="reputation-block">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+                                </p>
+                            </div>
+                            <div class="reputation-wrap ">
+                                <span class="d-block d-lg-none">2.</span>
+                                <img src="public/assets/images/edit-2-icon.png" alt="image-not-found" class="reputation-icons">
+                                <h1 class="reputation-header">Bidding and the Loan Marketplace.</h1>
+                                <p class="reputation-block">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+                                </p>
+                            </div>
+                            <div class="reputation-wrap">
+                                <span class="d-block d-lg-none">3.</span>
+                                <img src="public/assets/images/wallet-icon.png" alt="image-not-found" class="reputation-icons">
+                                <h1 class="reputation-header">Repayment and Reputation.</h1>
+                                <p class="reputation-block">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+                                </p>
+                            </div>
+                            <div class="reputation-wrap ">
+                                <span class="d-block d-lg-none">4.</span>
+                                <img src="public/assets/images/dollar-icon.png" alt="image-not-found" class="reputation-icons">
+                                <h1 class="reputation-header">Education and Rewards.</h1>
+                                <p class="reputation-block">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tdr-working-join">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. 
+                        </p>
+                        <a class="more-digitalr-knowmore revolution-btn" href="javascript:void(0);">Join the Revolution!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" role="tabpanel"  id="lender">
+                <div class="tdr-working-list">
+                    <div class="tdr-working-list-index d-none d-lg-block">
+                        <ul class="d-flex tdr-working-list-wrapper">
+                            <li class="justify-content-start tdr-working-list-section">
+                                1.
+                            </li>
+                            <li class="justify-content-start tdr-working-list-section">
+                                2.
+                            </li>
+                            <li class="justify-content-start tdr-working-list-section"> 
+                                3.
+                            </li>
+                            <li class="justify-content-start tdr-working-list-section">
+                                4.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tdr-working-list-contents">
+                        <div class="about-us-reputation-wrapper d-flex flex-column flex-lg-row flex-lg-wrap justify-content-lg-between">
+                            <div class="reputation-wrap">
+                                <span class="d-block d-lg-none">1.</span>
+                                <img src="public/assets/images/edit-1-icon.png" alt="image-not-found" class="reputation-icons">
+                                <h1 class="reputation-header">Sign Up and Verification.</h1>
+                                <p class="reputation-block">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+                                </p>
+                            </div>
+                            <div class="reputation-wrap ">
+                                <span class="d-block d-lg-none">2.</span>
+                                <img src="public/assets/images/edit-2-icon.png" alt="image-not-found" class="reputation-icons">
+                                <h1 class="reputation-header">Bidding and the Loan Marketplace.</h1>
+                                <p class="reputation-block">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+                                </p>
+                            </div>
+                            <div class="reputation-wrap">
+                                <span class="d-block d-lg-none">3.</span>
+                                <img src="public/assets/images/wallet-icon.png" alt="image-not-found" class="reputation-icons">
+                                <h1 class="reputation-header">Repayment and Reputation.</h1>
+                                <p class="reputation-block">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+                                </p>
+                            </div>
+                            <div class="reputation-wrap ">
+                                <span class="d-block d-lg-none">4.</span>
+                                <img src="public/assets/images/dollar-icon.png" alt="image-not-found" class="reputation-icons">
+                                <h1 class="reputation-header">Education and Rewards.</h1>
+                                <p class="reputation-block">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tdr-working-join">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. 
+                        </p>
+                        <a class="more-digitalr-knowmore revolution-btn" href="javascript:void(0);">Join the Revolution!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+        <script src="public/js/common.js')}}"></script>
+        <script src="public/js/home.js')}}"></script>
+        <script src="public/js/unsigned-header.js')}}"></script>
+        <script src="public/js/login.js')}}"></script>
+        <script src="public/js/enter_passkey.js')}}"></script>
+        <script type="text/javascript" src="{!! asset('js/jquery.toast.min.js') !!}"></script>
+       <!-- @if (session('success'))
+    <script type="text/javascript">
+        $.toast({
+            heading: 'Success',
+            text: '{{ session('success') }}',
+            showHideTransition: 'slide',
+            position: 'top-right',
+            stack: 2,
+            icon: 'success'
+        });
+    </script>
+    @php
+        session()->forget('success');
+    @endphp
+@endif
+
+@if (session('error'))
+    <script type="text/javascript">
+        $.toast({
+            heading: 'Error',
+            text: '{{ session('error') }}',
+            position: 'top-right',
+            stack: 2,
+            icon: 'error',
+            loader: true,        // Change it to false to disable loader
+            loaderBg: '#9EC600'  // To change the background
+        })
+    </script>
+    @php
+        session()->forget('error');
+    @endphp
+@endif -->
+    </body>
+
+</html>
