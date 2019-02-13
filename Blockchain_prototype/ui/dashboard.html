@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>The Digital Reserve</title>
+        <meta name="description" content="The most powerful innovation unleashed by Bitcoin is the creation of the opt-in economy. Our mission is to build an economic platform that includes everyone. How? Denarii.">
+        <link rel="canonical" href="dashboard.html">
+        <meta name="author" content="The Digital Reserve">
+        <link rel="icon" type="image/x-icon" href="ui/public/assets/images/favicon.ico">
+        <link rel="apple-touch-icon" href="ui/public/assets/images/custom-favicon.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="preload" href="ui/public/css/common.css" as="style" onload="this.rel='stylesheet'"> <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+                <link href="ui/public/css/jquery.toast.min.css" rel="stylesheet" type="text/css" />
+        <script>
+            /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */ !function(a){"use strict";var b=function(b,c,d){function j(a){if(e.body)return a();setTimeout(function(){j(a)})}function l(){f.addEventListener&&f.removeEventListener("load",l),f.media=d||"all"}var g,e=a.document,f=e.createElement("link");if(c)g=c;else{var h=(e.body||e.getElementsByTagName("head")[0]).childNodes;g=h[h.length-1]}var i=e.styleSheets;f.rel="stylesheet",f.href=b,f.media="only x",j(function(){g.parentNode.insertBefore(f,c?g:g.nextSibling)});var k=function(a){for(var b=f.href,c=i.length;c--;)if(i[c].href===b)return a();setTimeout(function(){k(a)})};return f.addEventListener&&f.addEventListener("load",l),f.onloadcssdefined=k,k(l),f};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this); /*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */ !function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(a){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+        </script>
+        <link rel="stylesheet" href="ui/public/css/signed-header.css">
+        <link rel="stylesheet" href="ui/public/css/dashboard.css">
+        <link rel="stylesheet" href="ui/public/css/dashboard-detail.css">
+        <link rel="stylesheet" href="ui/public/css/dashboard-favourites.css">
+        <link rel="stylesheet" href="ui/public/css/dashboard-all-denarii.css">
+        <link rel="stylesheet" href="ui/public/css/dashboard-recent-transactions.css">
+        <link rel="stylesheet" href="ui/public/css/dashboard-minting.css">
+        <link rel="stylesheet" href="ui/public/css/dashboard-overview.css">
+        <link rel="stylesheet" href="ui/public/css/wallet-all-transactions.css">
+        <link rel="stylesheet" href="ui/public/css/learn.css">
+        <link rel="stylesheet" href="ui/public/css/learn-quiz.css">
+        <link rel="stylesheet" href="ui/public/css/learn-reward.css">
+        <link rel="stylesheet" href="ui/public/css/learn-detail.css">
+        <link rel="stylesheet" href="ui/public/css/borrow-denarii.css">
+        <link rel="stylesheet" href="ui/public/css/mint-danarii.css">
+        <link rel="stylesheet" href="ui/public/css/send-denarii.css">
+        <link rel="stylesheet" href="ui/public/css/lend-denarii.css">
+        <link rel="stylesheet" href="ui/public/css/request-denarii.css">
+        <link rel="stylesheet" href="ui/public/css/share-details.css">
+        <link rel="stylesheet" href="ui/public/css/switch-node-popup.css">
+        <link rel="stylesheet" href="ui/public/css/lite-full-switch-node-popup.css">
+        <link rel="stylesheet" href="ui/public/css/switch-lite-node-progress.css">
+       
+        <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="container-fluid main-header-container d-lg-flex flex-lg-column" id="main-container">
+            <!-- all content comes here -->
+
+<header id="signed-main-header">
+        <nav class="navbar navbar-expand-lg justify-content-between signed-header-wrapper">
+            <a class="navbar-brand signed-header-text-wrap" href="#">
+                <img src="ui/public/assets/images/light-home-logo.png" class="d-block signed-logo-icon" id="dark-header-logo" alt="The Digital Reserve">
+            </a>
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon signed-toggle-icon"></span>
+            </button>
+            <div class="navbar-collapse justify-content-center align-items-center signed-collapse-wrapper" id="signed-menu-bar">
+                <div class="signed-menu-list-items d-flex d-lg-none justify-content-between align-items-center">
+                    <div class="d-flex flex-sm-row align-items-center">
+                        <img src="ui/public/assets/images/collapsable-menu-icon.png" class="signed-mobile-light-header-logo">
+                        <span class="signed-menu-header">The Digital Reserve</span> 
+                    </div>
+                    <img src="ui/public/assets/images/dark-close-icon.png" class="menu-close-icon">
+                </div>
+                <ul class="navbar-nav signed-nav-items-wrap d-flex align-items-start align-items-lg-center">
+                    <li class="nav-item ">
+                        <a class="nav-link signed-list-link signin-active" href="#" data-attr="Dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a class="nav-link signed-list-link" href="#"  data-attr="Wallet">Wallet</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a class="nav-link signed-list-link" href="#"  data-attr="Mint" data-target="#mint-denarii-modal" data-toggle="modal">Mint</a>
+                    </li>
+                    <li class="nav-item"> 
+                        <a class="nav-link signed-list-link" href="#" data-attr="Learn">Learn</a>
+                    </li>
+                    <li>
+                        <div class="logout-btn-wrapper d-block d-lg-none ">
+                            <button class="btn logout-btn"> Logout</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>  
+            <div class="user-profile-pic d-none d-lg-block" id="user-profile-pic">
+                <!-- added user profile here -->
+                <span class="user-profile-pic">
+                    <img src="ui/public/assets/images/user-profile-pic.png" alt="Profile">
+                </span>
+
+                <ul class="profile-dropdown-wrapper">
+                    <li class="profile-dropdown-option">
+                        <label for="upload-photo">Change Avatar</label>
+                        <input type="file" name="photo" id="upload-photo" accept=".png, .jpg, .jpeg"/>
+                    </li>
+                    <li class="profile-dropdown-option">
+                        <a href="#"  data-attr="Switch Node"  data-target="#switchNodeModal" data-toggle="modal">Switch Node</a>
+                    </li>
+                    <li class="profile-dropdown-option logout-option">
+                        <a href="{{route('logout'"><button>Logout</button></a> 
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+                <!-- signed-header comes here -->
+
+            <!-- dashboard page -->
+            <div class="dashboard-main-container d-lg-flex justify-content-lg-between flex-lg-row-reverse active" id="dashboard-page">
+                <div class="dashboard-right-container" id="dashboard-right-container">
+                    <div class="dashboard-component-main-wrapper d-lg-flex flex-column">
+    <h4 class="dashboard-detail-heading">Details</h4>
+    <div class="dashboard-wallet-bal-wrap d-flex justify-content-between align-items-start">
+        <span class="dashboard-wallet-amt-wrap d-flex flex-column">
+            <span class="dashboard-wallet-amt">
+
+               <!-- {{number_format(Auth::user()->wallet)}}K-->
+            </span>
+            <span class="dashboard-wallet-label">
+                Wallet Balance
+            </span>
+        </span>
+        <a href="#" class="signed-balance-navigation ">
+            <img src="assets/images/increment-icon.png" alt="Wallet">
+        </a>
+    </div>
+    <div class="dashboard-details-info-wrap d-flex flex-wrap">
+        <div class="dashboard-details-info-item d-flex flex-column total-borrowed-info">
+            <span class="dashboard-details-info-value">
+                32,878.98
+            </span>
+            <span class="dashboard-wallet-label">
+                Total Borrowed
+            </span>
+        </div>
+        <div class="dashboard-details-info-item d-flex flex-column borrowing-limit-info">
+            <span class="dashboard-details-info-value">
+                500K
+            </span>
+            <span class="dashboard-wallet-label">
+                Borrowing Limit
+            </span>
+        </div>
+        <div class="dashboard-details-info-item d-flex flex-column next-payment-date-info">
+            <span class="dashboard-details-info-value">
+                22 Jan ‘18
+            </span>
+            <span class="dashboard-wallet-label">
+                Next Payment Date
+            </span>
+        </div>
+        <div class="dashboard-details-info-item d-flex flex-column reputation-info">
+            <span class="dashboard-details-info-value d-lg-flex justify-content-between">
+                750pts
+                <i class="d-none d-lg-block em em-grinning"></i>
+            </span>
+            <span class="dashboard-wallet-label">
+                Reputation
+            </span>
+        </div>
+    </div>
+</div>
+                    <div id="dashboard_all_denarii_component" class="all_denarii_component"></div>
+                    <div class="dashboard-component-main-wrapper dashboard-favourites-main-wrapper">
+    <h4 class="dashboard-detail-heading">Favourites</h4>
+    <div class="dashboard-favourites-profile-wrap d-flex justify-content-between align-items-start" style="justify-content: right !important;">
+        @php
+        $user=Auth::user();
+        $sameid='';
+        @endphp
+        @foreach($user->transactions as $transaction)
+        @if($transaction->favourite->id != $sameid)
+        @php
+        $sameid=$transaction->favourite->id;
+        @endphp
+        <a href="send-denarii.html" class="d-flex flex-column" data-target="#send-denarii-modal" data-toggle="modal" style="margin-right:10px;">
+            <img src="ui/public/assets/images/dashboard-favourite-user.png" alt="Favourites">
+            <span class="dashboard-wallet-label text-center">{{ substr($transaction->favourite->email, 0, 6)}}</span>
+        </a>
+        @endif
+        @endforeach
+    </div>
+</div>
+                </div>
+                <div class="dashboard-left-container d-lg-flex flex-lg-column" id="dashboard-left-container">
+                    <div id="dashboard_overview_component"></div> 
+                    <div id="dashboard-inner-left-container" class="d-lg-flex">
+                        <div class="dashboard-component-main-wrapper dashboard-recet-transactions-main-wrapper" style="margin-right: 8px;width: 40%;">
+    <h4 class="dashboard-detail-heading d-flex justify-content-between">Recent Transactions <a href="#" class="signed-balance-navigation">View All</a></h4>
+    <div class="dashboard-recent-transaction-list-wrap">
+                <!--@foreach($user->transactions as $transaction)-->
+        <div class="dashboard-recent-transaction-list-item d-flex justify-content-between align-items-center">
+            <span class="dashboard-recent-transaction-list-value-wrap d-flex flex-column">
+                <span class="dashboard-recent-transaction-value"><!--${{number_format($transaction->amount)}}--></span>
+                <span class="dashboard-recent-transaction-value" style="font-size: 12px;">Email ID: <!--{{$transaction->username->email}}--></span>
+                <span class="dashboard-wallet-label dashboard-recent-transaction-date">
+                   <!-- {{date('d M y', strtotime($transaction->created_at))}}, ID: {{$transaction->id}}--></span>
+            </span>
+                           <!-- @if($transaction->status == '1')-->
+                            <span class="dashboard-recent-transaction-list-status">Send</span>
+                           <!-- @elseif($transaction->status == '2')-->
+                            <span class="dashboard-recent-transaction-list-status">Request Sent</span>
+                           <!-- @elseif($transaction->status == '3')-->
+                            <span class="dashboard-recent-transaction-list-status">Credit</span>
+                            <!--@elseif($transaction->status == '4')-->
+                            <span class="dashboard-recent-transaction-list-status">Request</span>
+                            <!--@endif-->
+        </div>
+        <!--@endforeach --> 
+
+    </div>
+</div>
+
+                        <div id="dashboard_minting_component"></div>  
+                    </div>                  
+                </div>
+            </div>
+
+             <!-- wallet page -->
+            <div class="dashboard-main-container d-lg-flex justify-content-lg-between flex-lg-row-reverse" id="wallet-page">
+                <div class="dashboard-right-container" id="wallet-right-container">
+                    <div class="dashboard-component-main-wrapper d-lg-flex flex-column">
+    <h4 class="dashboard-detail-heading">Details</h4>
+    <div class="dashboard-wallet-bal-wrap d-flex justify-content-between align-items-start">
+        <span class="dashboard-wallet-amt-wrap d-flex flex-column">
+            <span class="dashboard-wallet-amt">
+
+               <!-- {{number_format(Auth::user()->wallet)}}K-->
+            </span>
+            <span class="dashboard-wallet-label">
+                Wallet Balance
+            </span>
+        </span>
+        <a href="#" class="signed-balance-navigation ">
+            <img src="assets/images/increment-icon.png" alt="Wallet">
+        </a>
+    </div>
+    <div class="dashboard-details-info-wrap d-flex flex-wrap">
+        <div class="dashboard-details-info-item d-flex flex-column total-borrowed-info">
+            <span class="dashboard-details-info-value">
+                32,878.98
+            </span>
+            <span class="dashboard-wallet-label">
+                Total Borrowed
+            </span>
+        </div>
+        <div class="dashboard-details-info-item d-flex flex-column borrowing-limit-info">
+            <span class="dashboard-details-info-value">
+                500K
+            </span>
+            <span class="dashboard-wallet-label">
+                Borrowing Limit
+            </span>
+        </div>
+        <div class="dashboard-details-info-item d-flex flex-column next-payment-date-info">
+            <span class="dashboard-details-info-value">
+                22 Jan ‘18
+            </span>
+            <span class="dashboard-wallet-label">
+                Next Payment Date
+            </span>
+        </div>
+        <div class="dashboard-details-info-item d-flex flex-column reputation-info">
+            <span class="dashboard-details-info-value d-lg-flex justify-content-between">
+                750pts
+                <i class="d-none d-lg-block em em-grinning"></i>
+            </span>
+            <span class="dashboard-wallet-label">
+                Reputation
+            </span>
+        </div>
+    </div>
+</div>
+                    <div id="wallet_all_denarii_component" class="all_denarii_component"></div>
+                    <div class="dashboard-component-main-wrapper dashboard-favourites-main-wrapper">
+    <h4 class="dashboard-detail-heading">Favourites</h4>
+    <div class="dashboard-favourites-profile-wrap d-flex justify-content-between align-items-start" style="justify-content: right !important;">
+      <!--  @php
+        $user=Auth::user();
+        $sameid='';
+        @endphp
+        @foreach($user->transactions as $transaction)
+        @if($transaction->favourite->id != $sameid)
+        @php
+        $sameid=$transaction->favourite->id;
+        @endphp-->
+        <a href="send-denarii.html" class="d-flex flex-column" data-target="#send-denarii-modal" data-toggle="modal" style="margin-right:10px;">
+            <img src="ui/public/assets/images/dashboard-favourite-user.png" alt="Favourites">
+            <span class="dashboard-wallet-label text-center">{{ substr($transaction->favourite->email, 0, 6)}}</span>
+        </a>
+        @endif
+        @endforeach
+    </div>
+</div>
+                </div>
+                <div class="dashboard-left-container d-lg-flex flex-lg-column" id="wallet-left-container">
+                    <div class="dashboard-component-main-wrapper wallet-all-transaction-main-wrapper d-flex flex-column">
+        <h4 class="dashboard-detail-heading">All Transactions 
+            <select class="dashboard-detail-heading">
+                <option class="dashboard-detail-heading" selected disabled hidden>Filter By</option>
+                <option class="dashboard-detail-heading">Last 3 months</option>
+                <option class="dashboard-detail-heading">Last 6 months</option>
+                <option class="dashboard-detail-heading">Last 1 year</option>
+            </select>
+        </h4>
+        <div class="all-transactions-table-wrap">
+            <table class="table">
+                <tbody>
+                    @foreach($user->transactions as $transaction)
+                    <tr>
+                        <td>
+                            <span class="dashboard-recent-transaction-list-value-wrap d-flex flex-column">
+                                <span class="dashboard-recent-transaction-value">${{number_format($transaction->amount)}}</span>
+                                <span class="dashboard-wallet-label dashboard-recent-transaction-date">{{date('d M y', strtotime($transaction->created_at))}}, ID: {{$transaction->id}}</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="dashboard-recent-transaction-list-value-wrap d-flex flex-column">
+                                <span class="dashboard-recent-transaction-value">{{$transaction->username->email}}</span>
+                                <span class="dashboard-wallet-label dashboard-recent-transaction-date">Sent to</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="dashboard-recent-transaction-list-value-wrap d-flex flex-column">
+                                <span class="dashboard-recent-transaction-value">$ {{number_format($transaction->updated_wallet)}}</span>
+                                <span class="dashboard-wallet-label dashboard-recent-transaction-date">Updated Wallet Balance</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="dashboard-recent-transaction-list-value-wrap d-flex flex-column">
+                                @if($transaction->status == '1')
+                                <span class="dashboard-recent-transaction-value debit-transaction">Debit</span>
+                                @elseif($transaction->status == '3')
+                                <span class="dashboard-recent-transaction-value credit-transaction">Credit</span>
+                                @elseif($transaction->status == '4')
+                                <span class="dashboard-recent-transaction-value credit-transaction">Request</span>
+                                @elseif($transaction->status == '2')
+                                <span class="dashboard-recent-transaction-value credit-transaction">Request Sent</span>
+                                @endif
+                                <span class="dashboard-wallet-label dashboard-recent-transaction-date">Transaction Type</span>
+                            </span>
+                        </td>
+                        <td>
+                            @if($transaction->status == '1')
+                            <span class="dashboard-recent-transaction-list-status">Send</span>
+                            @elseif($transaction->status == '2')
+                            <span class="dashboard-recent-transaction-list-status">Request Sent</span>
+                            @elseif($transaction->status == '3')
+                            <span class="dashboard-recent-transaction-list-status">Credit</span>
+                            @elseif($transaction->status == '4')
+                            <span class="dashboard-recent-transaction-list-status">Request</span>
+                            @endif
+                        </td>        
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+</div>                       
+                </div>
+            </div>
+
+            <!-- learn page -->
+            <div class="dashboard-main-container d-flex flex-column flex-column-reverse justify-content-lg-between flex-lg-row-reverse" id="learn-page">
+                <div class="dashboard-right-container" id="learn-right-container">
+                    <div id="learn_detail_component" class="detail_component"></div>
+                    <div id="learn_reward_component" class="detail_component learn_reward_component"></div>
+                </div>
+                <div class="dashboard-left-container d-lg-flex" id="learn-left-container">
+                    <div id="learn_component"></div>
+                    <div id="learn_quiz_component"></div>
+                </div>
+            </div>
+            <div class="half-background-layer"></div>
+        </div>
+
+        <div id="borrow-denarii-modal-1">
+            <!-- borrow-denarii-1 come here -->
+        </div>
+        
+        <div id="mint-denarii-contanier">
+            <!-- mint-denarii come here -->
+        </div>
+
+<div class="modal fade mint-denarii-modal modal-overflow" id="send-denarii-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered send-denarii-modal-overlay" role="document">
+        <div class="modal-content send-denarii-modal-innerlay">
+            <div class="modal-header send-denarii-modal-wrapper d-flex align-items-center">
+                <div class="mint-denarii-main-wrapper">
+                    <img src="ui/public/assets/images/light-home-logo.png" alt="image-not-found" class="send-denarii-logo">
+                </div>
+                <button data-dismiss="modal" aria-label="Close" class="send-denarii-close clear-value">
+                    <img src="ui/public/assets/images/light-close-icon-3x.png" class="send-denarii-close-icon">
+                </button>
+            </div>
+                <div class="send-denarii-container form-values-container">
+                    <div class="send-denarii-header-block d-flex flex-column justify-content-center align-items-center">
+                        <h1 class="main-header">Send Denarii to a friend!</h1>
+                        <p class="content-wrap text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+                    </div>
+                    <div class="send-denarii-form-wrapper d-flex flex-column justify-content-center align-items-center">
+                        <form class="send-denarii-form d-flex flex-wrap justify-content-between" action="{{route('send')}}" method="post">
+
+                            {{csrf_field()}}
+                            <div class="form-group send-denarii-field-block commit-amount-block d-flex align-items-center justify-content-start justify-lg-content-center justify-content-sm-start justify-content-md-start">
+                                <input type="tel" class="form-value send-denarii-amount" name="amount" required>
+                                <label for="contact-name">Enter Amount</label>
+                                <span class="increment-icon inc-send-denarii-amt-val val-button"></span>
+                                <span class="decrement-icon dec-send-denarii-amt-val val-button"></span>
+                            </div>
+                            <div class="form-group send-denarii-field-block duration-block d-flex align-items-center justify-content-start justify-lg-content-center justify-content-sm-start justify-content-md-start">
+                                <input type="email" class="form-value send-value user-name-value" name="email2"  required>
+                                <label for="contact-name">Send to</label>
+                                
+                            </div>
+                            <div class="form-group send-denarii-field-block estimated-block d-flex align-items-center justify-content-start justify-lg-content-center justify-content-sm-start justify-content-md-start">
+                                <input type="password" class="form-value" required value="" name="password" autocomplete="new-password">
+                                <label for="contact-name">Transaction Password</label>
+                            </div>
+                            <div class="denarii-submit-btn-wrap text-center">
+                                <button class="denarii-btn">Send Denarii</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div id="lend-denarii-container">
+            <!-- lend-denarii come here -->
+        </div>
+
+<div class="modal fade request-denarii-modal modal-overflow" id="request-denarii-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered request-denarii-modal-overlay" role="document">
+            <div class="modal-content request-denarii-modal-innerlay">
+                <div class="modal-header request-denarii-modal-wrapper d-flex align-items-center">
+                    <div class="request-denarii-main-wrapper">
+                        <img src="ui/public/assets/images/light-home-logo.png" alt="image-not-found" class="request-denarii-logo">
+                    </div>
+                    <button data-dismiss="modal" aria-label="Close" class="request-denarii-close clear-value">
+                        <img src="ui/public/assets/images/light-close-icon-3x.png" class="request-denarii-close-icon">
+                    </button>
+                </div>
+                <div class="request-denarii-container form-values-container">
+                    <div class="request-denarii-header-block d-flex flex-column justify-content-center align-items-center">
+                        <h1 class="main-header text-center">Request Denarii from a friend!</h1>
+                        <p class="content-wrap text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+                    </div>
+                    <div class="request-denarii-form-wrapper d-flex flex-column justify-content-center align-items-center">
+                        <form class="request-denarii-form d-lg-flex flex-wrap justify-content-between" action="{{route('request')}}" method="post">
+                            {{csrf_field()}}
+                            <div class="form-group request-denarii-field-block commit-amount-block d-flex align-items-center justify-content-start justify-lg-content-center justify-content-sm-start justify-content-md-start">
+                                <input type="tel" class="form-value request-denarii-value" name="amount" required>
+                                <label for="contact-name">Enter Requested Amount</label>
+                                <span class="increment-icon inc-request-amt-value val-button"></span>
+                                <span class="decrement-icon des-request-amt-value val-button"></span>
+                            </div>
+                            <div class="form-group request-denarii-field-block duration-block d-flex align-items-center justify-content-start justify-lg-content-center justify-content-sm-start justify-content-md-start">
+                                <input type="text" class="form-value send-value user-name-value" name="email2" required>
+                                <label for="contact-name">Request From</label>
+                            </div>
+                            <div class="form-group request-denarii-field-block estimated-block due-date-value d-flex align-items-center justify-content-start justify-lg-content-center justify-content-sm-start justify-content-md-start">
+                                <input type="text" class="form-value data-field due-date-field" name="duedate" required>
+                                <label for="contact-name">Due Date</label>
+                                <span class="increment-icon inc-due-date val-button"></span>
+                                <span class="decrement-icon dec-due-date val-button"></span>
+                            </div>
+                            <div class="denarii-submit-btn-wrap text-center">
+                                <button class="denarii-btn">Request Denarii</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+        <div  class="share-details-popup" id="share-details-wrap">
+            <!-- share details come here -->
+        </div>
+
+        <!-- Learn Details Modal -->
+        <div class="modal fade" id="learn_detail_modal_component" tabindex="-1" role="dialog" aria-labelledby="learn_details" aria-hidden="true">
+        </div>
+
+        <div class="" id="switch-node-popup-container">
+            <!-- suggest switch popup comes here -->
+        </div>
+
+        <div class="" id="lite-full-node-popup-container">
+            <!-- switch node popup comes here -->
+        </div>
+       
+        <div class="" id="switch-node-progress-container">
+            <!-- node progress modal comes here -->
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+        <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.0.1/progressbar.min.js'></script>  
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="ui/public/js/dashboard.js"></script>
+        <script src="ui/public/js/mint-danarii.js"></script>
+        <script src="ui/public/js/borrow-denarii.js"></script>
+        <script src="ui/public/js/send-denarii.js"></script>
+        <script src="ui/public/js/request-denarii.js"></script>
+        <script src="ui/public/js/share-details.js"></script>
+        <script src="ui/public/js/switch-lite-node-progress.js"></script>
+        <script src="ui/public/js/switch-lite-node-progress.js"></script>
+        <script type="text/javascript" src="ui/public/js/jquery.toast.min.js"></script>
+        @if (session('success'))
+    <script type="text/javascript">
+        $.toast({
+            heading: 'Success',
+            text: '{{ session('success') }}',
+            showHideTransition: 'slide',
+            position: 'top-right',
+            stack: 2,
+            icon: 'success'
+        });
+    </script>
+    @php
+        session()->forget('success');
+    @endphp
+@endif
+
+@if (session('error'))
+    <script type="text/javascript">
+        $.toast({
+            heading: 'Error',
+            text: '{{ session('error') }}',
+            position: 'top-right',
+            stack: 2,
+            icon: 'error',
+            loader: true,        // Change it to false to disable loader
+            loaderBg: '#9EC600'  // To change the background
+        })
+    </script>
+    @php
+        session()->forget('error');
+    @endphp
+@endif
+
+    </body>
+
+</html>
