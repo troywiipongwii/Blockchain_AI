@@ -125,7 +125,7 @@
             </span>
         </span>
         <a href="#" class="signed-balance-navigation ">
-            <img src="assets/images/increment-icon.png" alt="Wallet">
+            <img src="ui/public/assets/images/increment-icon.png" alt="Wallet">
         </a>
     </div>
     <div class="dashboard-details-info-wrap d-flex flex-wrap">
@@ -168,7 +168,7 @@
                     <div class="dashboard-component-main-wrapper dashboard-favourites-main-wrapper">
     <h4 class="dashboard-detail-heading">Favourites</h4>
     <div class="dashboard-favourites-profile-wrap d-flex justify-content-between align-items-start" style="justify-content: right !important;">
-        @php
+       <!-- @php
         $user=Auth::user();
         $sameid='';
         @endphp
@@ -176,13 +176,13 @@
         @if($transaction->favourite->id != $sameid)
         @php
         $sameid=$transaction->favourite->id;
-        @endphp
+        @endphp-->
         <a href="send-denarii.html" class="d-flex flex-column" data-target="#send-denarii-modal" data-toggle="modal" style="margin-right:10px;">
             <img src="ui/public/assets/images/dashboard-favourite-user.png" alt="Favourites">
-            <span class="dashboard-wallet-label text-center">{{ substr($transaction->favourite->email, 0, 6)}}</span>
+            <span class="dashboard-wallet-label text-center"><!--{{ substr($transaction->favourite->email, 0, 6)}}--></span>
         </a>
-        @endif
-        @endforeach
+       <!-- @endif
+        @endforeach-->
     </div>
 </div>
                 </div>
@@ -236,7 +236,7 @@
             </span>
         </span>
         <a href="#" class="signed-balance-navigation ">
-            <img src="assets/images/increment-icon.png" alt="Wallet">
+            <img src="ui/public/assets/images/increment-icon.png" alt="Wallet">
         </a>
     </div>
     <div class="dashboard-details-info-wrap d-flex flex-wrap">
@@ -290,10 +290,10 @@
         @endphp-->
         <a href="send-denarii.html" class="d-flex flex-column" data-target="#send-denarii-modal" data-toggle="modal" style="margin-right:10px;">
             <img src="ui/public/assets/images/dashboard-favourite-user.png" alt="Favourites">
-            <span class="dashboard-wallet-label text-center">{{ substr($transaction->favourite->email, 0, 6)}}</span>
+            <span class="dashboard-wallet-label text-center"><!--{{ substr($transaction->favourite->email, 0, 6)}}--></span>
         </a>
-        @endif
-        @endforeach
+       <!-- @endif
+        @endforeach-->
     </div>
 </div>
                 </div>
@@ -310,7 +310,7 @@
         <div class="all-transactions-table-wrap">
             <table class="table">
                 <tbody>
-                    @foreach($user->transactions as $transaction)
+                   <!-- @foreach($user->transactions as $transaction)
                     <tr>
                         <td>
                             <span class="dashboard-recent-transaction-list-value-wrap d-flex flex-column">
@@ -356,7 +356,7 @@
                             @endif
                         </td>        
                     </tr>
-                    @endforeach
+                    @endforeach -->
                 </tbody>
             </table>
         </div>
