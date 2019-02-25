@@ -46,7 +46,8 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" rel="stylesheet">
 
     </head>
-    <body>
+    <body >
+        <div id="app">
         <div class="container-fluid main-header-container d-lg-flex flex-lg-column" id="main-container">
             <!-- all content comes here -->
 
@@ -117,11 +118,12 @@
     <div class="dashboard-wallet-bal-wrap d-flex justify-content-between align-items-start">
         <span class="dashboard-wallet-amt-wrap d-flex flex-column">
             <span class="dashboard-wallet-amt">
-
+            {{ funds.toFixed(2) }}
                <!-- {{number_format(Auth::user()->wallet)}}K-->
             </span>
             <span class="dashboard-wallet-label">
                 Wallet Balance
+
             </span>
         </span>
         <a href="#" class="signed-balance-navigation ">
@@ -131,7 +133,9 @@
     <div class="dashboard-details-info-wrap d-flex flex-wrap">
         <div class="dashboard-details-info-item d-flex flex-column total-borrowed-info">
             <span class="dashboard-details-info-value">
-                32,878.98
+
+
+                
             </span>
             <span class="dashboard-wallet-label">
                 Total Borrowed
@@ -228,11 +232,11 @@
     <div class="dashboard-wallet-bal-wrap d-flex justify-content-between align-items-start">
         <span class="dashboard-wallet-amt-wrap d-flex flex-column">
             <span class="dashboard-wallet-amt">
-
+            {{ funds.toFixed(2) }}
                <!-- {{number_format(Auth::user()->wallet)}}K-->
             </span>
             <span class="dashboard-wallet-label">
-                Wallet Balance
+                Wallet Balance 
             </span>
         </span>
         <a href="#" class="signed-balance-navigation ">
@@ -242,7 +246,7 @@
     <div class="dashboard-details-info-wrap d-flex flex-wrap">
         <div class="dashboard-details-info-item d-flex flex-column total-borrowed-info">
             <span class="dashboard-details-info-value">
-                32,878.98
+                
             </span>
             <span class="dashboard-wallet-label">
                 Total Borrowed
@@ -403,26 +407,23 @@
                         <p class="content-wrap text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
                     </div>
                     <div class="send-denarii-form-wrapper d-flex flex-column justify-content-center align-items-center">
-                        <form class="send-denarii-form d-flex flex-wrap justify-content-between" action="{{route('send')}}" method="post">
+                        <form @submit.prevent="onSendTx" class="send-denarii-form d-flex flex-wrap justify-content-between" >
 
-                            {{csrf_field()}}
+                            
                             <div class="form-group send-denarii-field-block commit-amount-block d-flex align-items-center justify-content-start justify-lg-content-center justify-content-sm-start justify-content-md-start">
-                                <input type="tel" class="form-value send-denarii-amount" name="amount" required>
-                                <label for="contact-name">Enter Amount</label>
+                                <input input v-model.number="outgoingTx.amount" type="number" class="form-value send-denarii-amount" id="amount" required>
+                                <label for="amount">Enter Amount</label>
                                 <span class="increment-icon inc-send-denarii-amt-val val-button"></span>
                                 <span class="decrement-icon dec-send-denarii-amt-val val-button"></span>
                             </div>
                             <div class="form-group send-denarii-field-block duration-block d-flex align-items-center justify-content-start justify-lg-content-center justify-content-sm-start justify-content-md-start">
-                                <input type="email" class="form-value send-value user-name-value" name="email2"  required>
-                                <label for="contact-name">Send to</label>
+                                <input type="text" v-model="outgoingTx.recipient"  class="form-control" id="recipient"  required>
+                                <label for="recipient">Send to</label>
                                 
                             </div>
-                            <div class="form-group send-denarii-field-block estimated-block d-flex align-items-center justify-content-start justify-lg-content-center justify-content-sm-start justify-content-md-start">
-                                <input type="password" class="form-value" required value="" name="password" autocomplete="new-password">
-                                <label for="contact-name">Transaction Password</label>
-                            </div>
-                            <div class="denarii-submit-btn-wrap text-center">
-                                <button class="denarii-btn">Send Denarii</button>
+                           
+                            <div  class="denarii-submit-btn-wrap text-center">
+                                <button type="submit" :disabled="txLoading || outgoingTx.recipient.trim() === '' || outgoingTx.amount <= 0" >Send Denarii</button>
                             </div>
                         </form>
                     </div>
@@ -435,6 +436,35 @@
         <div id="lend-denarii-container">
             <!-- lend-denarii come here -->
         </div>
+<div class="modal fade mint-modal modal-overflow" id="mint-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered mint-overlay" role="document">
+            <div class="modal-content request-denarii-modal-innerlay">
+                <div class="modal-header request-denarii-modal-wrapper d-flex align-items-center">
+                    <div class="request-denarii-main-wrapper">
+                        <img src="ui/public/assets/images/light-home-logo.png" alt="image-not-found" class="request-denarii-logo">
+                    </div>
+                    <button data-dismiss="modal" aria-label="Close" class="request-denarii-close clear-value">
+                        <img src="ui/public/assets/images/light-close-icon-3x.png" class="request-denarii-close-icon">
+                    </button>
+                </div>
+                <div class="request-denarii-container form-values-container">
+                    <div class="request-denarii-header-block d-flex flex-column justify-content-center align-items-center">
+                        <h1 class="main-header text-center">Request Denarii from a friend!</h1>
+                        <p class="content-wrap text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+                    </div>
+                    <div class="request-denarii-form-wrapper d-flex flex-column justify-content-center align-items-center">
+                            
+                            
+                        
+                           
+                                <button @click="onMine" class="denarii-btn"> Mine Denarii</button>
+                          
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <div class="modal fade request-denarii-modal modal-overflow" id="request-denarii-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered request-denarii-modal-overlay" role="document">
@@ -454,7 +484,7 @@
                     </div>
                     <div class="request-denarii-form-wrapper d-flex flex-column justify-content-center align-items-center">
                         <form class="request-denarii-form d-lg-flex flex-wrap justify-content-between" action="{{route('request')}}" method="post">
-                            {{csrf_field()}}
+                            
                             <div class="form-group request-denarii-field-block commit-amount-block d-flex align-items-center justify-content-start justify-lg-content-center justify-content-sm-start justify-content-md-start">
                                 <input type="tel" class="form-value request-denarii-value" name="amount" required>
                                 <label for="contact-name">Enter Requested Amount</label>
@@ -480,8 +510,173 @@
             </div>
         </div>
     </div>
+
 </div>
-        
+
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                blockchain: [],
+                openTransactions: [],
+                wallet: null,
+                view: 'chain',
+                walletLoading: false,
+                txLoading: false,
+                dataLoading: false,
+                showElement: null,
+                error: null,
+                success: null,
+                funds: 0,
+                outgoingTx: {
+                    recipient: '',
+                    amount: 0
+                }
+            },
+            computed: {
+                loadedData: function () {
+                    if (this.view === 'chain') {
+                        return this.blockchain;
+                    } else {
+                        return this.openTransactions;
+                    }
+                }
+            },
+            methods: {
+                onCreateWallet: function () {
+                    // Send Http request to create a new wallet (and return keys)
+
+                    var vm = this;
+                    this.walletLoading = true
+                    axios.post('/wallet')
+                        .then(function (response) {
+                            vm.error = null;
+                            vm.success = 'Created Wallet! Public Key: ' + response.data.public_key + ', Private Key: ' + response.data.private_key;
+                            vm.wallet = {
+                                public_key: response.data.public_key,
+                                private_key: response.data.private_key
+                            }
+                            vm.funds = response.data.funds;
+                            vm.walletLoading = false
+                        })
+                        .catch(function (error) {
+                            vm.success = null;
+                            vm.error = error.response.data.message
+                            vm.wallet = null
+                            vm.walletLoading = false
+                        });
+                },
+                onLoadWallet: function () {
+                    // Send Http request to load an existing wallet (from a file on the server)
+                    var vm = this;
+                    this.walletLoading = true
+                    axios.get('/wallet')
+                        .then(function (response) {
+                            vm.error = null;
+                            vm.success = 'Created Wallet! Public Key: ' + response.data.public_key + ', Private Key: ' + response.data.private_key;
+                            vm.wallet = {
+                                public_key: response.data.public_key,
+                                private_key: response.data.private_key
+                            }
+                            vm.funds = response.data.funds;
+                            vm.walletLoading = false;
+                        })
+                        .catch(function (error) {
+                            vm.success = null;
+                            vm.error = error.response.data.message;
+                            vm.wallet = null;
+                            vm.walletLoading = false;
+                        });
+                },
+                onSendTx: function () {
+                    // Send Transaction to backend
+                    console.log("got here");
+                    this.txLoading = true;
+                    var vm = this;
+                    axios.post('/transaction', {
+                        recipient: this.outgoingTx.recipient,
+                        amount: this.outgoingTx.amount
+                    })
+                    .then(function(response) {
+                        vm.error = null;
+                        vm.success = response.data.message;
+                        console.log(response.data);
+                        vm.funds = response.data.funds;
+                        vm.txLoading = false;
+                    })
+                    .catch(function (error) {
+                        vm.success = null;
+                        vm.error = error.response.data.message;
+                        vm.txLoading = false;
+                    });
+                },
+                onMine: function () {
+                    var vm = this
+                    axios.post('/mine')
+                        .then(function(response) {
+                            vm.error = null;
+                            vm.success = response.data.message;
+                            console.log(response.data);
+                            vm.funds = response.data.funds;
+                        })
+                        .catch(function (error) {
+                            vm.success = null;
+                            vm.error = error.response.data.message;
+                        });
+                },
+                onResolve: function() {
+                    var vm = this
+                    axios.post('/resolve-conflicts')
+                        .then(function(response) {
+                            vm.error = null;
+                            vm.success = response.data.message;
+                        })
+                        .catch(function (error) {
+                            vm.success = null;
+                            vm.error = error.response.data.message;
+                        });
+                },
+                onLoadData: function () {
+                    if (this.view === 'chain') {
+                        // Load blockchain data
+                        var vm = this
+                        this.dataLoading = true
+                        axios.get('/chain')
+                            .then(function (response) {
+                                vm.blockchain = response.data
+                                vm.dataLoading = false
+                            })
+                            .catch(function (error) {
+                                vm.dataLoading = false
+                                vm.error = 'Something went wrong.'
+                            });
+                    } else {
+                        // Load transaction data
+                        var vm = this
+                        axios.get('/transactions')
+                            .then(function (response) {
+                                vm.openTransactions = response.data
+                                vm.dataLoading = false
+                            })
+                            .catch(function (error) {
+                                vm.dataLoading = false
+                                vm.error = 'Something went wrong.'
+                            });
+                    }
+                }
+            },
+            beforeMount() {
+        this.onLoadWallet();
+        }
+
+        })
+    </script>
+
+
         <div  class="share-details-popup" id="share-details-wrap">
             <!-- share details come here -->
         </div>
@@ -523,34 +718,26 @@
     <script type="text/javascript">
         $.toast({
             heading: 'Success',
-            text: '{{ session('success') }}',
+            text: '',
             showHideTransition: 'slide',
             position: 'top-right',
             stack: 2,
             icon: 'success'
         });
     </script>
-    @php
-        session()->forget('success');
-    @endphp
-@endif
-
-@if (session('error'))
+    
     <script type="text/javascript">
         $.toast({
             heading: 'Error',
-            text: '{{ session('error') }}',
+            text: '',
             position: 'top-right',
             stack: 2,
             icon: 'error',
-            loader: true,        // Change it to false to disable loader
+            loader: true,        // Change it to false to disab loader
             loaderBg: '#9EC600'  // To change the background
         })
     </script>
-    @php
-        session()->forget('error');
-    @endphp
-@endif
+   
 
     </body>
 

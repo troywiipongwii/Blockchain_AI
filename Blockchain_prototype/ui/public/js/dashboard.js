@@ -1,22 +1,22 @@
 $(document).ready(function() {
 
-    $('#signed-header-container').load('signed_header_component/signed-header.html');
-    $('#send-denarii-conatainer').load('send_denarii_component/send-denarii.html')
-    $('#lend-denarii-container').load('lend_denarii_component/lend-denarii.html')
-    $('#request-denarii-container').load('request_denarii_component/request-denarii.html')
-    $('#borrow-denarii-modal-1').load('borrow_denarii_component/borrow-denarii.html')
-    $('#mint-denarii-contanier').load('mint_danarii_component/mint-danarii.html')
-    $('#dashboard_detail_component').load('dashboard_detail_component/dashboard-detail.html');
-    $('#dashboard_favourites_component').load('dashboard_favourites_component/dashboard-favourites.html');
-    $('#dashboard_all_denarii_component').load('dashboard_all_denarii_component/dashboard-all-denarii.html');
-    $('#dashboard_recent_transactions_component').load('dashboard_recent_transactions_component/dashboard-recent-transactions.html');
-    $('#dashboard_minting_component').load('dashboard_minting_component/dashboard-minting.html');
-    $('#dashboard_overview_component').load('dashboard_overview_component/dashboard-overview.html');
+    $('#signed-header-container').load('ui/public/signed_header_component/signed-header.html');
+    $('#send-denarii-conatainer').load('ui/public/send_denarii_component/send-denarii.html')
+    $('#lend-denarii-container').load('ui/public/lend_denarii_component/lend-denarii.html')
+    $('#request-denarii-container').load('ui/public/request_denarii_component/request-denarii.html')
+    $('#borrow-denarii-modal-1').load('ui/public/borrow_denarii_component/borrow-denarii.html')
+    $('#mint-denarii-contanier').load('ui/public/mint_danarii_component/mint-danarii.html')
+    $('#dashboard_detail_component').load('ui/public/dashboard_detail_component/dashboard-detail.html');
+    $('#dashboard_favourites_component').load('ui/public/dashboard_favourites_component/dashboard-favourites.html');
+    $('#dashboard_all_denarii_component').load('ui/public/dashboard_all_denarii_component/dashboard-all-denarii.html');
+    $('#dashboard_recent_transactions_component').load('ui/public/dashboard_recent_transactions_component/dashboard-recent-transactions.html');
+    $('#dashboard_minting_component').load('ui/public/dashboard_minting_component/dashboard-minting.html');
+    $('#dashboard_overview_component').load('ui/public/dashboard_overview_component/dashboard-overview.html');
     $('#dashboard-left-container').show();
-    $('#share-details-wrap').load('unsigned_header_component/share_details_component/share-details.html')
-    $('#switch-node-progress-container').load('switch_lite_node_progress_component/switch-lite-node-progress.html')
-    $('#switch-node-popup-container').load('switch_node_popup_component/switch-node-popup.html');
-    $('#lite-full-node-popup-container').load('lite_full_switch_node_popup_component/lite-full-switch-node-popup.html');
+    $('#share-details-wrap').load('ui/public/unsigned_header_component/share_details_component/share-details.html')
+    $('#switch-node-progress-container').load('ui/public/switch_lite_node_progress_component/switch-lite-node-progress.html')
+    $('#switch-node-popup-container').load('ui/public/switch_node_popup_component/switch-node-popup.html');
+    $('#lite-full-node-popup-container').load('ui/public/lite_full_switch_node_popup_component/lite-full-switch-node-popup.html');
     $(document).on('click', '.signed-toggle-icon', function(){
         $('.signed-header-wrapper').toggleClass('show-signed-menu');
         if($('.signed-header-wrapper').hasClass('show-signed-menu')){
@@ -43,21 +43,21 @@ $(document).ready(function() {
         if( attr_value == "Dashboard"){
             $('#dashboard-page').addClass('active');
             $('#wallet-page,#learn-page').removeClass('active');
-            $('#dashboard_detail_component').load('dashboard_detail_component/dashboard-detail.html');
-            $('#dashboard_favourites_component').load('dashboard_favourites_component/dashboard-favourites.html');
-            $('#dashboard_all_denarii_component').load('dashboard_all_denarii_component/dashboard-all-denarii.html');
-            $('#dashboard_recent_transactions_component').load('dashboard_recent_transactions_component/dashboard-recent-transactions.html');
-            $('#dashboard_minting_component').load('dashboard_minting_component/dashboard-minting.html');
-            $('#dashboard_overview_component').load('dashboard_overview_component/dashboard-overview.html');
+            $('#dashboard_detail_component').load('ui/public/dashboard_detail_component/dashboard-detail.html');
+            $('#dashboard_favourites_component').load('ui/public/dashboard_favourites_component/dashboard-favourites.html');
+            $('#dashboard_all_denarii_component').load('ui/public/dashboard_all_denarii_component/dashboard-all-denarii.html');
+            $('#dashboard_recent_transactions_component').load('ui/public/dashboard_recent_transactions_component/dashboard-recent-transactions.html');
+            $('#dashboard_minting_component').load('ui/public/dashboard_minting_component/dashboard-minting.html');
+            $('#dashboard_overview_component').load('ui/public/dashboard_overview_component/dashboard-overview.html');
             onPageLoad();
         }  
         else if( attr_value == "Wallet"){
             $('#dashboard-page,#learn-page').removeClass('active');
             $('#wallet-page').addClass('active');
-            $('#wallet_all_transactions_component').load('wallet_all_transactions_component/wallet-all-transactions.html');
-            $('#wallet_detail_component').load('dashboard_detail_component/dashboard-detail.html');
-            $('#wallet_favourites_component').load('dashboard_favourites_component/dashboard-favourites.html');
-            $('#wallet_all_denarii_component').load('dashboard_all_denarii_component/dashboard-all-denarii.html');
+            $('#wallet_all_transactions_component').load('ui/public/wallet_all_transactions_component/wallet-all-transactions.html');
+            $('#wallet_detail_component').load('ui/public/dashboard_detail_component/dashboard-detail.html');
+            $('#wallet_favourites_component').load('ui/public/dashboard_favourites_component/dashboard-favourites.html');
+            $('#wallet_all_denarii_component').load('ui/public/dashboard_all_denarii_component/dashboard-all-denarii.html');
             
         }
         else if( attr_value == "Mint"){
@@ -80,11 +80,11 @@ $(document).ready(function() {
         else if( attr_value == "Learn"){
             $('#learn-page').addClass('active');
             $('#dashboard-page,#wallet-page').removeClass('active');
-            $('#learn_component').load('learn_component/learn.html');
-            $('#learn_detail_component').load('dashboard_detail_component/dashboard-detail.html');
-            $('#learn_reward_component').load('learn_component/learn_reward_component/learn-reward.html');
-            $('#learn_quiz_component').load('learn_component/learn_quiz_component/learn-quiz.html');
-            $('#learn_detail_modal_component').load('learn_component/learn_detail_modal_component/learn-detail.html');
+            $('#learn_component').load('ui/public/learn_component/learn.html');
+            $('#learn_detail_component').load('ui/public/dashboard_detail_component/dashboard-detail.html');
+            $('#learn_reward_component').load('ui/public/learn_component/learn_reward_component/learn-reward.html');
+            $('#learn_quiz_component').load('ui/public/learn_component/learn_quiz_component/learn-quiz.html');
+            $('#learn_detail_modal_component').load('ui/public/learn_component/learn_detail_modal_component/learn-detail.html');
         }
         else{
             $('#dashboard-page').addClass('active');

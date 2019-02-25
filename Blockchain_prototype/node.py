@@ -28,8 +28,8 @@ def do_admin_login():
     session['logged_in'] = True
     #else:
     #flash('wrong password!')
-    #return send_from_directory('ui','node.html') 
-    return send_from_directory('ui','dashboard.html') 
+    return send_from_directory('ui','node.html') 
+    #return send_from_directory('ui','dashboard.html') 
 
 @app.route('/wallet', methods=['POST'])
 def create_keys():

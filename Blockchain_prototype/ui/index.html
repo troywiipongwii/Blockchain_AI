@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>The Digital Reserve</title>
         <meta name="description" content="The most powerful innovation unleashed by Bitcoin is the creation of the opt-in economy. Our mission is to build an economic platform that includes everyone. How? Denarii.">
-        <link rel="canonical" href="index.html">
+        <link rel="canonical" href="ui/index.html">
         <meta name="author" content="The Digital Reserve">
         <link rel="icon" type="image/x-icon" href="ui/public/assets/images/favicon.ico">
         <link rel="apple-touch-icon" href="ui/public/assets/images/custom-favicon.png">
@@ -32,6 +32,7 @@
         
     </head>
     <body>
+<div id=app>
 <header id="main-header">
     <nav class="navbar navbar-expand-lg justify-content-between header-wrapper">
         <a class="navbar-brand header-text-wrap" href="#">
@@ -104,7 +105,7 @@
             </div>
             
             <div class="file-btn-wrap">
-                <button type="submit" class="btn btn-primary d-block">Submit</button>
+                <button type="submit" class="btn btn-primary d-block" >Submit</button>
             </div>
         </form>
     </div>
@@ -147,7 +148,7 @@
             </p>
         </div>
         <form action="{{url('submit_user')}}" method="post">
-            {{csrf_field()}}
+           
             <div class="form-group">
                 <input type="email" class="form-control" id="signupemail" name="email" autocomplete="false" required>
                 <label for="signupemail">Enter Email</label>
@@ -391,38 +392,162 @@
         <script src="ui/public/js/login.js"></script>
         <script src="ui/public/js/enter_passkey.js"></script>
         <script type="text/javascript" src="ui/public/js/jquery.toast.min.js"></script>
-       <!-- @if (session('success'))
-    <script type="text/javascript">
-        $.toast({
-            heading: 'Success',
-            text: '{{ session('success') }}',
-            showHideTransition: 'slide',
-            position: 'top-right',
-            stack: 2,
-            icon: 'success'
-        });
-    </script>
-    @php
-        session()->forget('success');
-    @endphp
-@endif
-
-@if (session('error'))
-    <script type="text/javascript">
-        $.toast({
-            heading: 'Error',
-            text: '{{ session('error') }}',
-            position: 'top-right',
-            stack: 2,
-            icon: 'error',
-            loader: true,        // Change it to false to disable loader
-            loaderBg: '#9EC600'  // To change the background
+      
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+          <script>
+        new Vue({
+            el: '#app',
+            data: {
+                blockchain: [],
+                openTransactions: [],
+                wallet: null,
+                view: 'chain',
+                walletLoading: false,
+                txLoading: false,
+                dataLoading: false,
+                showElement: null,
+                error: null,
+                success: null,
+                funds: 0,
+                outgoingTx: {
+                    recipient: '',
+                    amount: 0
+                }
+            },
+            computed: {
+                loadedData: function () {
+                    if (this.view === 'chain') {
+                        return this.blockchain;
+                    } else {
+                        return this.openTransactions;
+                    }
+                }
+            },
+            methods: {
+                onCreateWallet: function () {
+                    // Send Http request to create a new wallet (and return keys)
+                    var vm = this;
+                    this.walletLoading = true
+                    axios.post('/wallet')
+                        .then(function (response) {
+                            vm.error = null;
+                            vm.success = 'Created Wallet! Public Key: ' + response.data.public_key + ', Private Key: ' + response.data.private_key;
+                            vm.wallet = {
+                                public_key: response.data.public_key,
+                                private_key: response.data.private_key
+                            }
+                            vm.funds = response.data.funds;
+                            vm.walletLoading = false
+                        })
+                        .catch(function (error) {
+                            vm.success = null;
+                            vm.error = error.response.data.message
+                            vm.wallet = null
+                            vm.walletLoading = false
+                        });
+                },
+                onLoadWallet: function () {
+                    // Send Http request to load an existing wallet (from a file on the server)
+                    var vm = this;
+                    this.walletLoading = true
+                    axios.get('/wallet')
+                        .then(function (response) {
+                            vm.error = null;
+                            vm.success = 'Created Wallet! Public Key: ' + response.data.public_key + ', Private Key: ' + response.data.private_key;
+                            vm.wallet = {
+                                public_key: response.data.public_key,
+                                private_key: response.data.private_key
+                            }
+                            vm.funds = response.data.funds;
+                            vm.walletLoading = false;
+                        })
+                        .catch(function (error) {
+                            vm.success = null;
+                            vm.error = error.response.data.message;
+                            vm.wallet = null;
+                            vm.walletLoading = false;
+                        });
+                },
+                onSendTx: function () {
+                    // Send Transaction to backend
+                    this.txLoading = true;
+                    var vm = this;
+                    axios.post('/transaction', {
+                        recipient: this.outgoingTx.recipient,
+                        amount: this.outgoingTx.amount
+                    })
+                    .then(function(response) {
+                        vm.error = null;
+                        vm.success = response.data.message;
+                        console.log(response.data);
+                        vm.funds = response.data.funds;
+                        vm.txLoading = false;
+                    })
+                    .catch(function (error) {
+                        vm.success = null;
+                        vm.error = error.response.data.message;
+                        vm.txLoading = false;
+                    });
+                },
+                onMine: function () {
+                    var vm = this
+                    axios.post('/mine')
+                        .then(function(response) {
+                            vm.error = null;
+                            vm.success = response.data.message;
+                            console.log(response.data);
+                            vm.funds = response.data.funds;
+                        })
+                        .catch(function (error) {
+                            vm.success = null;
+                            vm.error = error.response.data.message;
+                        });
+                },
+                onResolve: function() {
+                    var vm = this
+                    axios.post('/resolve-conflicts')
+                        .then(function(response) {
+                            vm.error = null;
+                            vm.success = response.data.message;
+                        })
+                        .catch(function (error) {
+                            vm.success = null;
+                            vm.error = error.response.data.message;
+                        });
+                },
+                onLoadData: function () {
+                    if (this.view === 'chain') {
+                        // Load blockchain data
+                        var vm = this
+                        this.dataLoading = true
+                        axios.get('/chain')
+                            .then(function (response) {
+                                vm.blockchain = response.data
+                                vm.dataLoading = false
+                            })
+                            .catch(function (error) {
+                                vm.dataLoading = false
+                                vm.error = 'Something went wrong.'
+                            });
+                    } else {
+                        // Load transaction data
+                        var vm = this
+                        axios.get('/transactions')
+                            .then(function (response) {
+                                vm.openTransactions = response.data
+                                vm.dataLoading = false
+                            })
+                            .catch(function (error) {
+                                vm.dataLoading = false
+                                vm.error = 'Something went wrong.'
+                            });
+                    }
+                }
+            }
         })
     </script>
-    @php
-        session()->forget('error');
-    @endphp
-@endif -->
+</div>
     </body>
 
 </html>
