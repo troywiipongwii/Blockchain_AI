@@ -179,14 +179,14 @@
                                 </div>
                             </div>
 
-                            <div v-if="view === 'tx'" class="card-header">
+                            <div class="card-header">
                                 <h5 class="mb-0">
                                     <button class="btn btn-link" type="button" @click="showElement === index ? showElement = null : showElement = index">
                                         Transaction #{{ index }}
                                     </button>
                                 </h5>
                             </div>
-                            <div v-if="view === 'tx'" class="collapse" :class="{show: showElement === index}">
+                            <div class="collapse" :class="{show: showElement === index}">
                                 <div class="card-body">
                                     <div class="list-group">
                                         <div class="list-group-item flex-column align-items-start">
