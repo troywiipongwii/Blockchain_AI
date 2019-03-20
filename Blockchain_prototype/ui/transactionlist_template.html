@@ -1,0 +1,22 @@
+    <div class="dashboard-recent-transaction-list-wrap">
+                <!--@foreach($user->transactions as $transaction)-->
+        <div class="dashboard-recent-transaction-list-item d-flex justify-content-between align-items-center">
+            <span class="dashboard-recent-transaction-list-value-wrap d-flex flex-column">
+                <span class="dashboard-recent-transaction-value"><!--${{number_format($transaction->amount)}}--></span>
+                <span class="dashboard-recent-transaction-value" style="font-size: 12px;">Email ID: <!--{{$transaction->username->email}}--></span>
+                <span class="dashboard-wallet-label dashboard-recent-transaction-date">
+                   <!-- {{date('d M y', strtotime($transaction->created_at))}}, ID: {{$transaction->id}}--></span>
+            </span>
+                           <!-- @if($transaction->status == '1')-->
+                            <span class="dashboard-recent-transaction-list-status">Send</span>
+                           <!-- @elseif($transaction->status == '2')-->
+                            <span class="dashboard-recent-transaction-list-status">Request Sent</span>
+                           <!-- @elseif($transaction->status == '3')-->
+                            <span class="dashboard-recent-transaction-list-status">Credit</span>
+                            <!--@elseif($transaction->status == '4')-->
+                            <span class="dashboard-recent-transaction-list-status">Request</span>
+                            <!--@endif-->
+        </div>
+        <!--@endforeach --> 
+
+    </div> <!-- -->

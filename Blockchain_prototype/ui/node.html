@@ -171,22 +171,22 @@
                                     <p>Previous Hash: {{ data.previous_hash }}</p>
                                     <div class="list-group">
                                         <div v-for="tx in data.transactions" class="list-group-item flex-column align-items-start">
-                                            <div>Sender: {{ tx.sender }}</div>
-                                            <div>Recipient: {{ tx.recipient }}</div>
+                                            <div>Sender2: {{ tx.sender }}</div>
+                                            <div>Recipient1: {{ tx.recipient }}</div>
                                             <div>Amount: {{ tx.amount }}</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="card-header">
+                            <div v-if="view === 'tx'" class="card-header">
                                 <h5 class="mb-0">
                                     <button class="btn btn-link" type="button" @click="showElement === index ? showElement = null : showElement = index">
                                         Transaction #{{ index }}
                                     </button>
                                 </h5>
                             </div>
-                            <div class="collapse" :class="{show: showElement === index}">
+                            <div v-if="view === 'tx'" class="collapse" :class="{show: showElement === index}">
                                 <div class="card-body">
                                     <div class="list-group">
                                         <div class="list-group-item flex-column align-items-start">

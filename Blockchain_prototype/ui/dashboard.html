@@ -195,9 +195,18 @@
                     <div id="dashboard-inner-left-container" class="d-lg-flex">
                         <div class="dashboard-component-main-wrapper dashboard-recet-transactions-main-wrapper" style="margin-right: 8px;width: 40%;">
     <h4 class="dashboard-detail-heading d-flex justify-content-between">Recent Transactions <a href="#" class="signed-balance-navigation">View All</a></h4>
+                       
+                        <div class="card" v-for="(data, index) in loadedData">
 
-
-    
+                            <div class="card-header">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" type="button" @click="showElement === index ? showElement = null : showElement = index">
+                                        Transaction #{{ index }}
+                                    </button>
+                                </h5>
+                            </div>
+                        </div>
+           
 </div>
 
                         <div id="dashboard_minting_component"></div>  
@@ -505,7 +514,7 @@
                 blockchain: [],
                 openTransactions: [],
                 wallet: null,
-                view: 'chain',
+                view: 'tx',
                 walletLoading: false,
                 txLoading: false,
                 dataLoading: false,
@@ -653,7 +662,7 @@
             beforeMount() {
         this.onLoadWallet();
         this.onLoadData();
-       }
+        }
 
         })
     </script>
