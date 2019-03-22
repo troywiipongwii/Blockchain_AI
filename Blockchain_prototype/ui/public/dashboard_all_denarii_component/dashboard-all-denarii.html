@@ -1,8 +1,75 @@
-<div class="dashboard-component-main-wrapper dashboard-all-denarii-main-wrapper d-flex flex-wrap justify-content-between align-items-start">
-    <a href="#" data-target="#send-denarii-modal" data-toggle="modal" class="denarii-modal">Send Denarii</a>
+
+
+<div id = "dash"class="dashboard-component-main-wrapper dashboard-all-denarii-main-wrapper d-flex flex-wrap justify-content-between align-items-start">
+    <a href="/" data-target="#send-denarii-modal" data-toggle="modal" class="denarii-modal">Send Denarii</a>
     <a href="#" data-target="#request-denarii-modal" data-toggle="modal"  class="denarii-modal">Request Denarii</a>
     <a href="#" data-target="#borrow-denarii-modal" data-toggle="modal"  class="denarii-modal">Borrow Denarii</a>
     <a href="#" data-target="#lend-denarii-modal" data-toggle="modal"  class="denarii-modal">Lend Denarii</a>
 
-    <a href="#" data-target="#mint-modal" data-toggle="modal"  class="denarii-modal">Mine</a>
+		<a href="/" @click="onMine" class="denarii-modal" >Mine</a>
 </div>
+
+   <script>
+        new Vue({
+            el: '#dash',
+            data: {
+                blockchain: [],
+                openTransactions: [],
+                wallet: null,
+                view: 'tx',
+                walletLoading: false,
+                txLoading: false,
+                dataLoading: false,
+                showElement: null,
+                error: null,
+                transout: 'haha',
+                success: null,
+                funds: 0,
+                outgoingTx: {
+                    recipient: '',
+                    amount: 0
+                }
+            },
+            computed: {
+                loadedData: function () {
+                    if (this.view === 'chain') {
+                        return this.blockchain;
+                    } else {
+                        return this.openTransactions;
+                    }
+                }
+            },
+            methods: {
+                
+                
+                onMine: function () {
+                    var vm = this
+                    axios.post('/mine')
+                        .then(function(response) {
+                            vm.error = null;
+                            vm.success = response.data.message;
+                            console.log(response.data);
+                            vm.funds = response.data.funds;
+                        })
+                        .catch(function (error) {
+                            vm.success = null;
+                            vm.error = error.response.data.message;
+                        });
+                },
+                onResolve: function() {
+                    var vm = this
+                    axios.post('/resolve-conflicts')
+                        .then(function(response) {
+                            vm.error = null;
+                            vm.success = response.data.message;
+                        })
+                        .catch(function (error) {
+                            vm.success = null;
+                            vm.error = error.response.data.message;
+                        });
+                }
+                
+       }
+
+        })
+    </script> 

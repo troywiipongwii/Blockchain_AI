@@ -1,3 +1,4 @@
+<div id="app">
 <div class="modal fade mint-denarii-modal modal-overflow" id="send-denarii-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered send-denarii-modal-overlay" role="document">
         <div class="modal-content send-denarii-modal-innerlay">
@@ -17,22 +18,19 @@
                     <div class="send-denarii-form-wrapper d-flex flex-column justify-content-center align-items-center">
                         <form class="send-denarii-form d-flex flex-wrap justify-content-between">
                             <div class="form-group send-denarii-field-block commit-amount-block d-flex align-items-center justify-content-start justify-lg-content-center justify-content-sm-start justify-content-md-start">
-                                <input type="tel" class="form-value send-denarii-amount" required>
-                                <label for="contact-name">Enter Amount</label>
+                                <input v-model.number="outgoingTx.amount" type="number" class="form-value send-denarii-amount" required>
+                                <label for="amount">Enter Amount</label>
                                 <span class="increment-icon inc-send-denarii-amt-val val-button"></span>
                                 <span class="decrement-icon dec-send-denarii-amt-val val-button"></span>
                             </div>
                             <div class="form-group send-denarii-field-block duration-block d-flex align-items-center justify-content-start justify-lg-content-center justify-content-sm-start justify-content-md-start">
-                                <input type="email" class="form-value send-value user-name-value"  required>
-                                <label for="contact-name">Send to</label>
+                                <input type="text" class="form-value send-value user-name-value" v-model="outgoingTx.recipient" required>
+                                <label for="recipient">Send to</label>
                                 
                             </div>
-                            <div class="form-group send-denarii-field-block estimated-block d-flex align-items-center justify-content-start justify-lg-content-center justify-content-sm-start justify-content-md-start">
-                                <input type="password" class="form-value" required value="" autocomplete="new-password">
-                                <label for="contact-name">Transaction Password</label>
-                            </div>
+                            
                             <div class="denarii-submit-btn-wrap text-center">
-                                <button class="denarii-btn">Send Denarii</button>
+                                <button @click="onSendTx" onclick="parent.window.close();" class="denarii-btn">Send Denarii</button>
                             </div>
                         </form>
                     </div>
@@ -41,4 +39,135 @@
         </div>
     </div>
 </div>
-<script src="send_denarii_component/send-denarii.js"></script>
+<script src="ui/public/send_denarii_component/send-denarii.js"></script>
+
+   <script>
+        new Vue({
+            el: '#app',
+            data: {
+                blockchain: [],
+                openTransactions: [],
+                wallet: null,
+                view: 'tx',
+                walletLoading: false,
+                txLoading: false,
+                dataLoading: false,
+                showElement: null,
+                error: null,
+                transout: 'haha',
+                success: null,
+                funds: 0,
+                outgoingTx: {
+                    recipient: '',
+                    amount: 0
+                }
+            },
+            computed: {
+                loadedData: function () {
+                    if (this.view === 'chain') {
+                        return this.blockchain;
+                    } else {
+                        return this.openTransactions;
+                    }
+                }
+            },
+            methods: {
+                onCreateWallet: function () {
+                    // Send Http request to create a new wallet (and return keys)
+
+                    var vm = this;
+                    this.walletLoading = true
+                    axios.post('/wallet')
+                        .then(function (response) {
+                            vm.error = null;
+                            vm.success = 'Created Wallet! Public Key: ' + response.data.public_key + ', Private Key: ' + response.data.private_key;
+                            vm.wallet = {
+                                public_key: response.data.public_key,
+                                private_key: response.data.private_key
+                            }
+                            vm.funds = response.data.funds;
+                            vm.walletLoading = false
+                        })
+                        .catch(function (error) {
+                            vm.success = null;
+                            vm.error = error.response.data.message
+                            vm.wallet = null
+                            vm.walletLoading = false
+                        });
+                },
+                onLoadWallet: function () {
+                    // Send Http request to load an existing wallet (from a file on the server)
+                    var vm = this;
+                    this.walletLoading = true
+                    axios.get('/wallet')
+                        .then(function (response) {
+                            vm.error = null;
+                            vm.success = 'Created Wallet! Public Key: ' + response.data.public_key + ', Private Key: ' + response.data.private_key;
+                            vm.wallet = {
+                                public_key: response.data.public_key,
+                                private_key: response.data.private_key
+                            }
+                            vm.funds = response.data.funds;
+                            vm.walletLoading = false;
+                        })
+                        .catch(function (error) {
+                            vm.success = null;
+                            vm.error = error.response.data.message;
+                            vm.wallet = null;
+                            vm.walletLoading = false;
+                        });
+                },
+                onSendTx: function () {
+                    // Send Transaction to backend
+                    console.log("sending tickets");
+                    this.txLoading = true;
+                    var vm = this;
+                    axios.post('/transaction', {
+                        recipient: this.outgoingTx.recipient,
+                        amount: this.outgoingTx.amount
+                    })
+                    .then(function(response) {
+                        vm.error = null;
+                        vm.success = response.data.message;
+                        console.log(response.data);
+                        vm.funds = response.data.funds;
+                        vm.txLoading = false;
+                    })
+                    .catch(function (error) {
+                        vm.success = null;
+                        vm.error = error.response.data.message;
+                        vm.txLoading = false;
+                    });
+                },
+                onMine: function () {
+                    var vm = this
+                    axios.post('/mine')
+                        .then(function(response) {
+                            vm.error = null;
+                            vm.success = response.data.message;
+                            console.log(response.data);
+                            vm.funds = response.data.funds;
+                        })
+                        .catch(function (error) {
+                            vm.success = null;
+                            vm.error = error.response.data.message;
+                        });
+                },
+                onResolve: function() {
+                    var vm = this
+                    axios.post('/resolve-conflicts')
+                        .then(function(response) {
+                            vm.error = null;
+                            vm.success = response.data.message;
+                        })
+                        .catch(function (error) {
+                            vm.success = null;
+                            vm.error = error.response.data.message;
+                        });
+                },
+                
+            },
+           
+
+        })
+    </script>
