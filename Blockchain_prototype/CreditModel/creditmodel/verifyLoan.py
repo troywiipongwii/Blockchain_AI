@@ -2,17 +2,19 @@
 # Functions for verifying loan authenticity should be created in a similar fashion.  
 
 
-
+# still thinking through the logic of this loan verification process.  not sure if this is necessary like this.  maybe exapnd the definition of 
+# transactions  
 @staticmethod
-def verify_transaction(transaction, get_balance, check_funds=True):
-    """Verify a transaction by checking whether the sender has sufficient coins.
+def verify_loan_transaction(transaction, get_credit_score, check_score=True):
+    """Verify an authentic loan by checking credit score, if credit score
+    is above the threshhold the loan is authentic and should be in transactions
 
     Arguments:
         :transaction: The transaction that should be verified.
     """
-    if check_funds:
-        sender_balance = get_balance(transaction.sender)
-        return sender_balance >= transaction.amount and Wallet.verify_transaction(transaction)
+    if check_credit_score:
+        borrower_score = get_credit_score(transaction.borrower)
+        return borrower_score >= transaction.amount and Wallet.verify_transaction(transaction)
     else:
         return Wallet.verify_transaction(transaction)
 
