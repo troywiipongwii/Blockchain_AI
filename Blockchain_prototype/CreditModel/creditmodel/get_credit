@@ -1,0 +1,29 @@
+def get_credit(self, borrower=None):
+    """Calculate and return the balance for a participant.
+    """
+    if borrower == None:
+        if self.public_key == None:
+            return None
+        participant = self.public_key
+    else:
+        participant = borrower
+    # Fetch a list of all sent coin amounts for the given person (empty lists are returned if the person was NOT the sender)
+    # This fetches sent amounts of transactions that were already included in blocks of the blockchain
+    tx_borrower = [[tx.payment_history for tx in block.transactions
+                  if tx.borrower == participant] for block in self.__chain]
+    # Fetch a list of all sent coin amounts for the given person (empty lists are returned if the person was NOT the sender)
+    # This fetches sent amounts of open transactions (to avoid double spending)
+    open_tx_borrower = [tx.payment_history
+                      for tx in self.__open_transactions if tx.borrower == participant]
+    tx_borrower.append(open_tx_borrower)
+    print(tx_borrower)
+    repayments = reduce(lambda tx_sum, tx_amt: tx_sum + sum(tx_amt)
+                         if len(tx_amt) > 0 else tx_sum + 0, tx_borrower, 0)
+    # This fetches received coin amounts of transactions that were already included in blocks of the blockchain
+    # We ignore open transactions here because you shouldn't be able to spend coins before the transaction was confirmed + included in a block
+    tx_recipient = [[tx.amount for tx in block.transactions
+                     if tx.recipient == participant] for block in self.__chain]
+    amount_borrowed = reduce(lambda tx_sum, tx_amt: tx_sum + sum(tx_amt)
+                             if len(tx_amt) > 0 else tx_sum + 0, tx_recipient, 0)
+    # Return the total balance
+    return amount_borrowed - repayments
