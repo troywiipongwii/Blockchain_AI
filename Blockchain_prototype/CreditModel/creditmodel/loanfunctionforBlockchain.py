@@ -1,4 +1,5 @@
 # This function is a part of the blockchain script should go under add transaction.
+# should we just make transaction a logic statement for transactions, if transaction is not loan request, ignore all loan features....
 
 
 def request_loan(self, borrower,requested_amount,amount,requested_length,length,requested_apr,
@@ -8,13 +9,26 @@ def request_loan(self, borrower,requested_amount,amount,requested_length,length,
     Arguments:
 
     """
-    # transaction = {
-    #     'sender': sender,
-    #     'recipient': recipient,
-    #     'amount': amount
-    # }
-    # if self.public_key == None:
-    #     return False
+    """
+      transaction = {
+          'borrower': borrower,
+          'requested amount': requested_amount,
+          'amount' : amount,
+          'requested length' : length,
+          'length': length,
+          'requested_apr' : requested_apr,
+          'apr' : apr,
+          'debt ratio' : debtRatio,
+          'amount owed' : amountOwed,
+          'new credit' : newCredit
+          'payment history' : paymentHistory,
+          'length of credit' : lenOfCredit,
+          ' loan purpose' : creditType,
+          'signature' : signature }
+     if self.public_key == None:
+        return False
+        
+    """
     loanRequest = LoanRequest(self, borrower,requested_amount,amount,requested_length,length,requested_apr,
                  apr,debtRatio, amountOwed, newCredit,paymentHistory,lenOfCredit, creditType, signature)
     
