@@ -1,0 +1,176 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Digital Reserve</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container-fluid main-container">
+<header>
+	<div class="row">
+    	<div class="col-xs-12 col-sm-3 col-md-4">
+        	<div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+        </div>
+        <div class="col-xs-12 col-sm-9 col-md-8">
+        	<nav class="navbar navbar-default">
+              <div>
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt=""></a>
+                </div>
+            
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               	  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><img src="images/user-img.png" alt=""></a></li>
+                  </ul>
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Dashboard</a></li>
+                    <li><a href="#">Send</a></li>
+                    <li><a href="receive.html">Receive</a></li>
+                    <li><a href="#">Mint</a></li>
+                    <li><a href="borrow.html">Borrow</a></li>
+                    <li><a href="learn.html">Learn</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Sign Out</a></li>
+                  </ul>
+                  
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+    </div>
+</header>
+  <div class="row">
+  	  <div class="col-xs-12 col-sm-9">
+      <div class="table-box">
+      	<div class="box-title">TRANSACTION HISTORY</div>
+      	<div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Value (Denarii / USD)</th>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Transaction ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>+100/1.00</td>
+                <td>January 6, 2017</td>
+                <td><span class="text-danger">Loan</span></td>
+                <td>0X983456392321234</td>
+              </tr>
+              <tr>
+                <td>-100/1.00</td>
+                <td>January 5, 2017</td>
+                <td><span class="text-success">Payment</span></td>
+                <td>0X983456392321234</td>
+              </tr>
+              <tr>
+                <td>-100/1.00</td>
+                <td>January 4, 2017</td>
+                <td><span class="text-danger">Loan</span></td>
+                <td>0X983456392321234</td>
+              </tr>
+              <tr>
+                <td>-100/1.00</td>
+                <td>January 3, 2017</td>
+                <td><span class="text-success">Payment</span></td>
+                <td>0X983456392321234</td>
+              </tr>
+              <tr>
+                <td>-100/1.00</td>
+                <td>January 2, 2017</td>
+                <td><span class="text-danger">Loan</span></td>
+                <td>0X983456392321234</td>
+              </tr>
+              <tr>
+                <td>-100/1.00</td>
+                <td>January 1, 2017</td>
+                <td><span class="text-success">Payment</span></td>
+                <td>0X983456392321234</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <div class="table-box">
+      	<div class="box-title">Reserve Network Overview</div>
+      	<div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td width="40%">Available to Borrow:</td>
+                <td class="text-right" width="30%"><strong>750,000,000 Denarii</strong></td>
+                <td width="30%">&nbsp;</td>
+              </tr>
+              <tr>
+                <td>Transaction Volume:</td>
+                <td class="text-right"><strong>2,200,000,000 Denarii</strong></td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>Most Popular Transaction Type:</td>
+                <td class="text-right"><strong>Loan</strong></td>
+                <td>&nbsp;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      </div>
+      <div class="col-xs-12 col-sm-3">
+      	<div class="right-box">
+        	<div class="help-box">
+            	<div class="icon"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
+                <div class="content">Head to the <a href="#">Learn</a> section to improve your reputation.</div>
+            </div>
+        </div>
+       <div class="right-box text-center">
+        	<div class="right-box-title">ACCOUNT BALANCE</div>
+            <div class="right-box-content"><strong>10,000 Denarii</strong></div>
+        </div>
+        <div class="right-box text-center">
+        	<div class="right-box-title">Next Payment Date</div>
+            <div class="right-box-content"><strong>20 July, 2020</strong></div>
+        </div>
+        <div class="right-box text-center">
+        	<div class="right-box-title">Reputation</div>
+            <div class="right-box-content">
+            	<div class="table-responsive reputation-table">
+            		<table class="table">
+                    	<tr>
+                        	<td>Score:</td>
+                            <td><strong>750</strong></td>
+                        </tr>
+                        <tr>
+                        	<td>Grade:</td>
+                            <td><strong>A</strong></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html> 

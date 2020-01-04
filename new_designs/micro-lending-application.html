@@ -1,0 +1,188 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Digital Reserve</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  
+  <!-------------------- range slider -------------------->
+  <link rel="stylesheet" href="css/bootstrap-slider.css">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container-fluid main-container">
+<header>
+	<div class="row">
+    	<div class="col-xs-12 col-sm-3 col-md-4">
+        	<div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+        </div>
+        <div class="col-xs-12 col-sm-9 col-md-8">
+        	<nav class="navbar navbar-default">
+              <div>
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt=""></a>
+                </div>
+            
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               	  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><img src="images/user-img.png" alt=""></a></li>
+                  </ul>
+                  <ul class="nav navbar-nav">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="#">Send</a></li>
+                    <li><a href="receive.html">Receive</a></li>
+                    <li><a href="#">Mint</a></li>
+                    <li class="active"><a href="borrow.html">Borrow</a></li>
+                    <li><a href="learn.html">Learn</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Sign Out</a></li>
+                  </ul>
+                  
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+    </div>
+</header>
+  <div class="row">
+  	  <div class="col-xs-12 col-sm-12">
+      <div class="table-box borrow-box lending-application-page text-center">
+      	<div class="row">
+        	<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            	<div class="box-title">MICRO-LENDING APPLICATION</div>
+                <div class="box-content">
+                    <div class="lending-application">
+                    	<form>
+                        	<div class="application-box-wrap">
+                                <div class="application-box">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-4">
+                                            <label>Borrow Amount:</label>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-8">                                    	
+                                            <div class="range-box">
+                                                <div id="ex1CurrentSliderValLabel" class="range-value">Maximum <span id="ex1SliderVal">0</span>k Denarii</div>
+                                                <input id="ex1" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="0"/>
+                                            </div>                                         
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="application-box-wrap">
+                                <div class="application-box">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-4">
+                                            <label>Interest Rate:</label>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-8">
+                                            <div class="range-box">
+                                                <div id="ex2CurrentSliderValLabel" class="range-value">Min <span id="ex2SliderVal">3</span>% - Max 25%</div>
+                                                <input id="ex2" type="text" data-slider-min="3" data-slider-max="25" data-slider-step="1" data-slider-value="3"/> 
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="range-note">Average Interest Rate Bid: 7%</div>
+                            </div>
+                            <div class="application-box-wrap">
+                                <div class="application-box">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-4">
+                                            <label>Repayment Period:</label>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-8">
+                                            <div class="range-box">
+                                                <div id="ex3CurrentSliderValLabel" class="range-value"><span id="ex3SliderVal">1</span> days - Maximum</div>
+                                                <input id="ex3" type="text" data-slider-min="1" data-slider-max="60" data-slider-step="1" data-slider-value="0"/> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="range-note">Average Repayment Rate Bid: 21 Days</div>
+                            </div>
+                            <div class="application-box-wrap">
+                                <div class="application-box">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="checkbox">
+                                              <label class="checkbox-container" for="incomegap"><input type="checkbox" name="incomegap" id="incomegap"> Income Gap
+                                              <span class="checkmark"></span>
+                                              </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="checkbox">
+                                              <label class="checkbox-container" for="investment"><input type="checkbox" name="investment" id="investment"> Investment
+                                              <span class="checkmark"></span>
+                                              </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="checkbox">
+                                              <label class="checkbox-container" for="gift"><input type="checkbox" name="gift" id="gift"> 1 x Gift
+                                              <span class="checkmark"></span>
+                                              </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="checkbox">
+                                              <label class="checkbox-container" for="other"><input type="checkbox" name="other" id="other"> Other:
+                                              <span class="checkmark"></span>
+                                              </label>
+                                              <input type="text" name="other" class="show-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="range-note">Average Repayment Rate Bid: 21 Days</div>
+                            </div>
+                            <button type="submit" class="btn btn-info btn-lg">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>	
+        
+      </div>
+      
+      </div>
+  </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<!-------------------- range slider -------------------->
+<script src="js/bootstrap-slider.js"></script>
+<script>
+// With JQuery
+$("#ex1, #ex2, #ex3").slider();
+
+$("#ex1").on("slide", function(slideEvt) {
+	$("#ex1SliderVal").text(slideEvt.value);
+});
+
+$("#ex2").on("slide", function(slideEvt) {
+	$("#ex2SliderVal").text(slideEvt.value);
+});
+
+$("#ex3").on("slide", function(slideEvt) {
+	$("#ex3SliderVal").text(slideEvt.value);
+});
+</script>
+</body>
+</html> 
